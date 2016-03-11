@@ -1,6 +1,7 @@
 package se.mah.ke405A;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -18,6 +19,22 @@ import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Toolkit;
+
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+
+import javax.swing.border.LineBorder;
+import javax.swing.JLabel;
+import java.awt.BorderLayout;
+import java.awt.Font;
+import java.awt.SystemColor;
+import javax.swing.JProgressBar;
 
 public class Main extends JFrame {
 
@@ -33,6 +50,7 @@ public class Main extends JFrame {
 				try {
 					Main frame = new Main();
 					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -44,14 +62,23 @@ public class Main extends JFrame {
 	 * Create the frame.
 	 */
 	public Main() {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1920, 1080);
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		 double width = screenSize.getWidth();
+		 double height = screenSize.getHeight();
+		 System.out.println("JFrame Width: "+width+" Height: "+height);
+		 this.setBounds(0, 0, (int)width, (int)height); 
+		this.setUndecorated(true);
+		
 		getContentPane().setLayout(null);
+		
 		
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(Main.class.getResource("/images/ladda ned.jpg")));
-		label.setBounds(0, 0, 1902, 1033);
+		label.setBounds(0, 0, (int)width,(int)height );
 		getContentPane().add(label);
 		
 		
-}}
+}	
+}
