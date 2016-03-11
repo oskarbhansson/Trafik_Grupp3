@@ -75,7 +75,7 @@ public class Main extends JFrame {
 		
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(Main.class.getResource("/images/ladda ned.jpg")));
+		label.setIcon(new ImageIcon(Main.class.getResource("/images/Grafiko-profilo.png")));
 		label.setBounds(0, 0, (int)width,(int)height );
 		getContentPane().add(label);
 		
