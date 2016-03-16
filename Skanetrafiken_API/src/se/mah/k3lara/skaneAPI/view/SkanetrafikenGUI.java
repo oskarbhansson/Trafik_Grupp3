@@ -1,6 +1,7 @@
 package se.mah.k3lara.skaneAPI.view;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -93,6 +94,10 @@ public class SkanetrafikenGUI extends JFrame {
 	private JTextField bussnr9;
 	private JTextField bussnr10;
 	private JTextField bussnr11;
+	private Color red = new Color(195,0,45);
+	private Color grey = new Color(228,231,226);
+	private Color darkGrey = new Color(187,192,188);
+	private Color lightGrey= new Color(239,240,240);
 
 	/**
 	 * Launch the application.
@@ -122,38 +127,50 @@ public class SkanetrafikenGUI extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(Color.WHITE);
 		panel.setBounds(6, 6, 320, 326);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
 		txtAvgngarFrn = new JTextField();
+		txtAvgngarFrn.setForeground(Color.WHITE);
 		txtAvgngarFrn.setEditable(false);
 		txtAvgngarFrn.setText("Avgångar från Malmö C");
 		txtAvgngarFrn.setBounds(0, 0, 314, 26);
+		
+		txtAvgngarFrn.setBackground(red);
 		panel.add(txtAvgngarFrn);
 		txtAvgngarFrn.setColumns(10);
 		
 		txtLinje = new JTextField();
+		txtLinje.setForeground(Color.WHITE);
 		txtLinje.setText("Linje:");
 		txtLinje.setBounds(0, 25, 49, 26);
+		txtLinje.setBackground(red);
 		panel.add(txtLinje);
 		txtLinje.setColumns(10);
 		
 		txtMot = new JTextField();
+		txtMot.setForeground(Color.WHITE);
 		txtMot.setText("Mot:");
 		txtMot.setBounds(47, 25, 87, 26);
+		txtMot.setBackground(red);
 		panel.add(txtMot);
 		txtMot.setColumns(10);
 		
 		txtAvgngOm = new JTextField();
+		txtAvgngOm.setForeground(Color.WHITE);
 		txtAvgngOm.setText("Avgång om:");
 		txtAvgngOm.setBounds(132, 25, 113, 26);
+		txtAvgngOm.setBackground(red);
 		panel.add(txtAvgngOm);
 		txtAvgngOm.setColumns(10);
 		
 		txtHpl = new JTextField();
+		txtHpl.setForeground(Color.WHITE);
 		txtHpl.setText("Hpl:");
 		txtHpl.setBounds(244, 25, 70, 26);
+		txtHpl.setBackground(red);
 		panel.add(txtHpl);
 		txtHpl.setColumns(10);
 		
@@ -190,26 +207,31 @@ public class SkanetrafikenGUI extends JFrame {
 		departure2 = new JTextField();
 		departure2.setColumns(10);
 		departure2.setBounds(47, 69, 87, 26);
+		departure2.setBackground(grey);
 		panel.add(departure2);
 		
 		tid2_1 = new JTextField();
 		tid2_1.setColumns(10);
 		tid2_1.setBounds(132, 69, 42, 26);
+		tid2_1.setBackground(grey);
 		panel.add(tid2_1);
 		
 		tid2_2 = new JTextField();
 		tid2_2.setColumns(10);
 		tid2_2.setBounds(167, 69, 42, 26);
+		tid2_2.setBackground(grey);
 		panel.add(tid2_2);
 		
 		tid2_3 = new JTextField();
 		tid2_3.setColumns(10);
 		tid2_3.setBounds(202, 69, 42, 26);
+		tid2_3.setBackground(grey);
 		panel.add(tid2_3);
 		
 		hpl2 = new JTextField();
 		hpl2.setColumns(10);
 		hpl2.setBounds(244, 69, 70, 26);
+		hpl2.setBackground(grey);
 		panel.add(hpl2);
 		
 		departure3 = new JTextField();
@@ -240,26 +262,31 @@ public class SkanetrafikenGUI extends JFrame {
 		departure4 = new JTextField();
 		departure4.setColumns(10);
 		departure4.setBounds(47, 115, 87, 26);
+		departure4.setBackground(grey);
 		panel.add(departure4);
 		
 		tid4_1 = new JTextField();
 		tid4_1.setColumns(10);
 		tid4_1.setBounds(132, 115, 42, 26);
+		tid4_1.setBackground(grey);
 		panel.add(tid4_1);
 		
 		tid4_2 = new JTextField();
 		tid4_2.setColumns(10);
 		tid4_2.setBounds(167, 115, 42, 26);
+		tid4_2.setBackground(grey);
 		panel.add(tid4_2);
 		
 		tid4_3 = new JTextField();
 		tid4_3.setColumns(10);
 		tid4_3.setBounds(202, 115, 42, 26);
+		tid4_3.setBackground(grey);
 		panel.add(tid4_3);
 		
 		hpl4 = new JTextField();
 		hpl4.setColumns(10);
 		hpl4.setBounds(244, 115, 70, 26);
+		hpl4.setBackground(grey);
 		panel.add(hpl4);
 		
 		daparture5 = new JTextField();
@@ -290,26 +317,31 @@ public class SkanetrafikenGUI extends JFrame {
 		departure6 = new JTextField();
 		departure6.setColumns(10);
 		departure6.setBounds(47, 161, 87, 26);
+		departure6.setBackground(grey);
 		panel.add(departure6);
 		
 		tid6_1 = new JTextField();
 		tid6_1.setColumns(10);
 		tid6_1.setBounds(132, 161, 42, 26);
+		tid6_1.setBackground(grey);
 		panel.add(tid6_1);
 		
 		tid6_2 = new JTextField();
 		tid6_2.setColumns(10);
 		tid6_2.setBounds(167, 161, 42, 26);
+		tid6_2.setBackground(grey);
 		panel.add(tid6_2);
 		
 		tid6_3 = new JTextField();
 		tid6_3.setColumns(10);
 		tid6_3.setBounds(202, 161, 42, 26);
+		tid6_3.setBackground(grey);
 		panel.add(tid6_3);
 		
 		hpl6 = new JTextField();
 		hpl6.setColumns(10);
 		hpl6.setBounds(244, 161, 70, 26);
+		hpl6.setBackground(grey);
 		panel.add(hpl6);
 		
 		departure7 = new JTextField();
@@ -340,26 +372,31 @@ public class SkanetrafikenGUI extends JFrame {
 		departure8 = new JTextField();
 		departure8.setColumns(10);
 		departure8.setBounds(47, 207, 87, 26);
+		departure8.setBackground(grey);
 		panel.add(departure8);
 		
 		tid8_1 = new JTextField();
 		tid8_1.setColumns(10);
 		tid8_1.setBounds(132, 207, 42, 26);
+		tid8_1.setBackground(grey);
 		panel.add(tid8_1);
 		
 		tid8_2 = new JTextField();
 		tid8_2.setColumns(10);
 		tid8_2.setBounds(167, 207, 42, 26);
+		tid8_2.setBackground(grey);
 		panel.add(tid8_2);
 		
 		tid8_3 = new JTextField();
 		tid8_3.setColumns(10);
 		tid8_3.setBounds(202, 207, 42, 26);
+		tid8_3.setBackground(grey);
 		panel.add(tid8_3);
 		
 		hpl8 = new JTextField();
 		hpl8.setColumns(10);
 		hpl8.setBounds(244, 207, 70, 26);
+		hpl8.setBackground(grey);
 		panel.add(hpl8);
 		
 		departure9 = new JTextField();
@@ -390,26 +427,31 @@ public class SkanetrafikenGUI extends JFrame {
 		departure10 = new JTextField();
 		departure10.setColumns(10);
 		departure10.setBounds(47, 253, 87, 26);
+		departure10.setBackground(grey);
 		panel.add(departure10);
 		
 		tid10_1 = new JTextField();
 		tid10_1.setColumns(10);
 		tid10_1.setBounds(132, 253, 42, 26);
+		tid10_1.setBackground(grey);
 		panel.add(tid10_1);
 		
 		tid10_2 = new JTextField();
 		tid10_2.setColumns(10);
 		tid10_2.setBounds(167, 253, 42, 26);
+		tid10_2.setBackground(grey);
 		panel.add(tid10_2);
 		
 		tid10_3 = new JTextField();
 		tid10_3.setColumns(10);
 		tid10_3.setBounds(202, 253, 42, 26);
+		tid10_3.setBackground(grey);
 		panel.add(tid10_3);
 		
 		hpl10 = new JTextField();
 		hpl10.setColumns(10);
 		hpl10.setBounds(244, 253, 70, 26);
+		hpl10.setBackground(grey);
 		panel.add(hpl10);
 		
 		departure11 = new JTextField();
@@ -485,6 +527,7 @@ public class SkanetrafikenGUI extends JFrame {
 		bussnr2 = new JTextField();
 		bussnr2.setColumns(10);
 		bussnr2.setBounds(24, 69, 25, 26);
+		bussnr2.setBackground(grey);
 		panel.add(bussnr2);
 		
 		bussnr3 = new JTextField();
@@ -495,6 +538,7 @@ public class SkanetrafikenGUI extends JFrame {
 		bussnr4 = new JTextField();
 		bussnr4.setColumns(10);
 		bussnr4.setBounds(24, 115, 25, 26);
+		bussnr4.setBackground(grey);
 		panel.add(bussnr4);
 		
 		bussnr5 = new JTextField();
@@ -505,6 +549,7 @@ public class SkanetrafikenGUI extends JFrame {
 		bussnr6 = new JTextField();
 		bussnr6.setColumns(10);
 		bussnr6.setBounds(24, 161, 25, 26);
+		bussnr6.setBackground(grey);
 		panel.add(bussnr6);
 		
 		bussnr7 = new JTextField();
@@ -515,6 +560,7 @@ public class SkanetrafikenGUI extends JFrame {
 		bussnr8 = new JTextField();
 		bussnr8.setColumns(10);
 		bussnr8.setBounds(24, 207, 25, 26);
+		bussnr8.setBackground(grey);
 		panel.add(bussnr8);
 		
 		bussnr9 = new JTextField();
@@ -525,6 +571,7 @@ public class SkanetrafikenGUI extends JFrame {
 		bussnr10 = new JTextField();
 		bussnr10.setColumns(10);
 		bussnr10.setBounds(24, 253, 25, 26);
+		bussnr10.setBackground(grey);
 		panel.add(bussnr10);
 		
 		bussnr11 = new JTextField();
