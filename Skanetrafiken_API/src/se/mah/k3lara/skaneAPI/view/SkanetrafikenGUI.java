@@ -41,8 +41,8 @@ public class SkanetrafikenGUI extends JFrame {
 	private timeTableLogic myLogic;
 	
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	public double width = screenSize.getWidth();
-	public double height = screenSize.getHeight();
+	public double width = 1920;//screenSize.getWidth();
+	public double height = 1080;//screenSize.getHeight();
 
 	public JPanel contentPane;
 	public Color red = new Color(195, 0, 45);
@@ -199,7 +199,7 @@ public class SkanetrafikenGUI extends JFrame {
 	public SkanetrafikenGUI() {
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, screenSize.width, screenSize.height);
+		setBounds(0, 0, 1920, 1080);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -947,6 +947,7 @@ public class SkanetrafikenGUI extends JFrame {
 	
 		
 		new getBernstorp().start();
+		new getSegevang().start();
 		
 		
 	}
@@ -954,20 +955,23 @@ public class SkanetrafikenGUI extends JFrame {
 	public class getSegevang extends Thread {
 		@Override
 		public void run() {
-			String searchURL = Constants.getURL("80000", "80200", 3);
+			String searchURL = Constants.getURL("80000", "80200", 1);
 			Journeys journeys = Parser.getJourneys(searchURL);
 
 			for (Journey journey : journeys.getJourneys()) {
+
 				int fyran = 4;
+
+
 				
 				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"
 						+ journey.getDepDateTime().get(Calendar.MINUTE);
 
 				try {
 					if (Integer.parseInt(journey.getLineOnFirstJourney()) == fyran) {
-						System.out.println(journey.getLineOnFirstJourney());
-						System.out.println(journey.getEndStation().toString());
-						System.out.println(" Departs " + time + " " + " that is in " + journey.getTimeToDeparture()
+						textField_4.setText(journey.getLineOnFirstJourney());
+						textField_2.setText(journey.getEndStation().toString());
+						textField_5.setText( journey.getTimeToDeparture()
 								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
 
 					}
@@ -984,7 +988,7 @@ public class SkanetrafikenGUI extends JFrame {
 	public class getBernstorp extends Thread {
 		@Override
 		public void run() {
-			String searchURL = Constants.getURL("80000", "31033", 20);
+			String searchURL = Constants.getURL("80000", "31033", 1);
 			Journeys journeys = Parser.getJourneys(searchURL);
 
 			for (Journey journey : journeys.getJourneys()) {
@@ -995,11 +999,11 @@ public class SkanetrafikenGUI extends JFrame {
 
 				try {
 					if (Integer.parseInt(journey.getLineOnFirstJourney()) == fyran) {
-						textField_4.setText(journey.getLineOnFirstJourney());
-						textField_2.setText(journey.getEndStation().toString());
-						textField_5.setText(" Departs " + time + " " + " that is in " + journey.getTimeToDeparture()
+						textField_8.setText(journey.getLineOnFirstJourney());
+						textField_9.setText(journey.getEndStation().toString());
+						textField_10.setText( journey.getTimeToDeparture()
 								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
-						System.out.println("HEJ");
+
 					}
 
 				} catch (java.lang.NumberFormatException e) {
