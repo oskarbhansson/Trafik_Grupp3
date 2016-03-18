@@ -73,12 +73,9 @@ public class Main extends JFrame {
 		
 		getContentPane().setLayout(null);
 		
-		
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon(Main.class.getResource("/images/Hej.png")));
 		label.setBounds(0, 0, (int)width,(int)height );
 		getContentPane().add(label);
-		
-		
-}	
+	}	
 }
