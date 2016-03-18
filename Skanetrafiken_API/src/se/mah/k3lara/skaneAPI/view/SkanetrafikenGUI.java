@@ -1014,6 +1014,14 @@ public class SkanetrafikenGUI extends JFrame {
 		
 		new getBernstorp().start();
 		new getSegevang().start();
+		new getBunkeflostrand().start();
+		new getLimhamn().start();
+		new getFullriggaren().start();
+		new getLindangen().start();
+		new getOstraHamnen().start();
+		new getKaglinge().start();
+		new getFalsterbo().start();
+		new getTrelleborg().start();
 		
 		
 	}
@@ -1074,6 +1082,271 @@ public class SkanetrafikenGUI extends JFrame {
 
 				} catch (java.lang.NumberFormatException e) {
 					System.out.println("error");
+
+				}
+			}
+		}
+
+	}
+	
+	public class getBunkeflostrand extends Thread {
+		@Override
+		public void run() {
+			String searchURL = Constants.getURL("80000", "80049", 2);
+			Journeys journeys = Parser.getJourneys(searchURL);
+
+			for (Journey journey : journeys.getJourneys()) {
+
+				int fyran = 4;
+
+
+				
+				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"
+						+ journey.getDepDateTime().get(Calendar.MINUTE);
+
+				try {
+					if (Integer.parseInt(journey.getLineOnFirstJourney()) == fyran) {
+						textField_14.setText(journey.getLineOnFirstJourney());
+						textField_15.setText(journey.getEndStation().toString());
+						textField_16.setText( journey.getTimeToDeparture()
+								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
+
+					}
+
+				} catch (java.lang.NumberFormatException e) {
+					System.out.println("error");
+
+				}
+			}
+		}
+
+	}
+	
+	public class getLimhamn extends Thread {
+		@Override
+		public void run() {
+			String searchURL = Constants.getURL("80000", "80310", 2);
+			Journeys journeys = Parser.getJourneys(searchURL);
+
+			for (Journey journey : journeys.getJourneys()) {
+
+				int fyran = 4;
+
+
+				
+				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"
+						+ journey.getDepDateTime().get(Calendar.MINUTE);
+
+				try {
+					if (Integer.parseInt(journey.getLineOnFirstJourney()) == fyran) {
+						textField_20.setText(journey.getLineOnFirstJourney());
+						textField_21.setText(journey.getEndStation().toString());
+						textField_22.setText( journey.getTimeToDeparture()
+								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
+
+					}
+
+				} catch (java.lang.NumberFormatException e) {
+					System.out.println("error");
+
+				}
+			}
+		}
+
+	}
+	
+	public class getFullriggaren extends Thread {
+		@Override
+		public void run() {
+			String searchURL = Constants.getURL("80000", "80080", 2);
+			Journeys journeys = Parser.getJourneys(searchURL);
+
+			for (Journey journey : journeys.getJourneys()) {
+
+				int tva = 2;
+
+
+				
+				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"
+						+ journey.getDepDateTime().get(Calendar.MINUTE);
+
+				try {
+					if (Integer.parseInt(journey.getLineOnFirstJourney()) == tva) {
+						textField_26.setText(journey.getLineOnFirstJourney());
+						textField_27.setText(journey.getEndStation().toString());
+						textField_28.setText( journey.getTimeToDeparture()
+								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
+
+					}
+
+				} catch (java.lang.NumberFormatException e) {
+					System.out.println("errorFullriggaren");
+
+				}
+			}
+		}
+
+	}
+	
+	public class getLindangen extends Thread {
+		@Override
+		public void run() {
+			String searchURL = Constants.getURL("80000", "80600", 3);
+			Journeys journeys = Parser.getJourneys(searchURL);
+
+			for (Journey journey : journeys.getJourneys()) {
+
+				int tva = 2;
+
+
+				
+				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"
+						+ journey.getDepDateTime().get(Calendar.MINUTE);
+
+				try {
+					if (Integer.parseInt(journey.getLineOnFirstJourney()) == tva) {
+						textField_32.setText(journey.getLineOnFirstJourney());
+						textField_33.setText(journey.getEndStation().toString());
+						textField_34.setText( journey.getTimeToDeparture()
+								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
+
+					}
+
+				} catch (java.lang.NumberFormatException e) {
+					System.out.println("error");
+
+				}
+			}
+		}
+
+	}
+	
+	public class getOstraHamnen extends Thread {
+		@Override
+		public void run() {
+			String searchURL = Constants.getURL("80000", "80020", 3);
+			Journeys journeys = Parser.getJourneys(searchURL);
+
+			for (Journey journey : journeys.getJourneys()) {
+
+				int trettitva = 32;
+
+
+				
+				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"
+						+ journey.getDepDateTime().get(Calendar.MINUTE);
+
+				try {
+					if (Integer.parseInt(journey.getLineOnFirstJourney()) == trettitva) {
+						textField_38.setText(journey.getLineOnFirstJourney());
+						textField_39.setText(journey.getEndStation().toString());
+						textField_40.setText( journey.getTimeToDeparture()
+								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
+
+					}
+
+				} catch (java.lang.NumberFormatException e) {
+					System.out.println("error");
+
+				}
+			}
+		}
+
+	}
+	
+	
+	public class getKaglinge extends Thread {
+		@Override
+		public void run() {
+			String searchURL = Constants.getURL("80000", "80740", 3);
+			Journeys journeys = Parser.getJourneys(searchURL);
+
+			for (Journey journey : journeys.getJourneys()) {
+
+				int trettitva = 32;
+
+
+				
+				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"
+						+ journey.getDepDateTime().get(Calendar.MINUTE);
+
+				try {
+					if (Integer.parseInt(journey.getLineOnFirstJourney()) == trettitva) {
+						textField_38.setText(journey.getLineOnFirstJourney());
+						textField_39.setText(journey.getEndStation().toString());
+						textField_40.setText( journey.getTimeToDeparture()
+								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
+
+					}
+
+				} catch (java.lang.NumberFormatException e) {
+					System.out.println("error");
+
+				}
+			}
+		}
+
+	}
+	
+	public class getFalsterbo extends Thread {
+		@Override
+		public void run() {
+			String searchURL = Constants.getURL("80000", "80740", 50);
+			Journeys journeys = Parser.getJourneys(searchURL);
+
+			for (Journey journey : journeys.getJourneys()) {
+
+				int hundra = 100;
+
+
+				
+				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"
+						+ journey.getDepDateTime().get(Calendar.MINUTE);
+
+				try {
+					if (Integer.parseInt(journey.getLineOnFirstJourney()) == hundra) {
+						textField_44.setText(journey.getLineOnFirstJourney());
+						textField_45.setText(journey.getEndStation().toString());
+						textField_46.setText( journey.getTimeToDeparture()
+								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
+
+					}
+
+				} catch (java.lang.NumberFormatException e) {
+					System.out.println("errorFalsterbo");
+
+				}
+			}
+		}
+
+	}
+	
+	public class getTrelleborg extends Thread {
+		@Override
+		public void run() {
+			String searchURL = Constants.getURL("80000", "80740", 50);
+			Journeys journeys = Parser.getJourneys(searchURL);
+
+			for (Journey journey : journeys.getJourneys()) {
+
+				int hundrafyrtisex = 146;
+
+
+				
+				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"
+						+ journey.getDepDateTime().get(Calendar.MINUTE);
+
+				try {
+					if (Integer.parseInt(journey.getLineOnFirstJourney()) == hundrafyrtisex) {
+						textField_50.setText(journey.getLineOnFirstJourney());
+						textField_51.setText(journey.getEndStation().toString());
+						textField_52.setText( journey.getTimeToDeparture()
+								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
+
+					}
+
+				} catch (java.lang.NumberFormatException e) {
+					System.out.println("errorFalsterbo");
 
 				}
 			}
