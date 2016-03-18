@@ -869,7 +869,6 @@ public class SkanetrafikenGUI extends JFrame {
 		panel.add(textField_92);
 
 		textField_93 = new JTextField();
-		textField_93.setText("Mot");
 		textField_93.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		textField_93.setColumns(10);
 		textField_93.setBounds(184, 919, 309, 42);
@@ -895,7 +894,6 @@ public class SkanetrafikenGUI extends JFrame {
 		panel.add(textField_96);
 
 		textField_97 = new JTextField();
-		textField_97.setText("Linje");
 		textField_97.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		textField_97.setColumns(10);
 		textField_97.setBounds(819, 919, 124, 42);
@@ -912,7 +910,6 @@ public class SkanetrafikenGUI extends JFrame {
 		panel.add(textField_98);
 
 		textField_99 = new JTextField();
-		textField_99.setText("Mot");
 		textField_99.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		textField_99.setColumns(10);
 		textField_99.setBounds(184, 974, 309, 42);
@@ -934,7 +931,6 @@ public class SkanetrafikenGUI extends JFrame {
 		panel.add(textField_102);
 
 		textField_103 = new JTextField();
-		textField_103.setText("Linje");
 		textField_103.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		textField_103.setColumns(10);
 		textField_103.setBounds(819, 974, 124, 42);
