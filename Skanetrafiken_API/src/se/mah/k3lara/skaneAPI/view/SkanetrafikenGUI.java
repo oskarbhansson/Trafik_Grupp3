@@ -15,6 +15,9 @@ import javax.swing.border.EmptyBorder;
 import se.mah.k3lara.skaneAPI.control.Constants;
 import se.mah.k3lara.skaneAPI.model.Journey;
 import se.mah.k3lara.skaneAPI.model.Journeys;
+import se.mah.k3lara.skaneAPI.view.*;
+import se.mah.k3lara.skaneAPI.view.timeTableLogic.getBernstorp;
+import se.mah.k3lara.skaneAPI.view.timeTableLogic.getSegevang;
 import se.mah.k3lara.skaneAPI.xmlparser.Parser;
 
 import javax.swing.JTextField;
@@ -32,147 +35,152 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import java.awt.SystemColor;
 
-public class SkanetrafikenGUI extends JFrame {
 
+
+public class SkanetrafikenGUI extends JFrame {
+	private timeTableLogic myLogic;
+	
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	public double width = 1920;//screenSize.getWidth();
 	public double height = 1080;//screenSize.getHeight();
 
-	private JPanel contentPane;
-	private Color red = new Color(195, 0, 45);
-	private Color grey = new Color(228, 231, 226);
-	private Color darkGrey = new Color(187, 192, 188);
-	private Color lightGrey = new Color(239, 240, 240);
-	private JTextField txtAv;
-	private JTextField txtLinje;
-	private JTextField txtMot;
-	private JTextField txtNstaAvgng;
-	private JTextField txtHpl;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JLabel lblNewLabel;
-	private JLabel label;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_12;
-	private JTextField textField_13;
-	private JLabel label_1;
-	private JTextField textField_14;
-	private JTextField textField_15;
-	private JTextField textField_16;
-	private JTextField textField_17;
-	private JTextField textField_18;
-	private JTextField textField_19;
-	private JLabel label_2;
-	private JTextField textField_20;
-	private JTextField textField_21;
-	private JTextField textField_22;
-	private JTextField textField_23;
-	private JTextField textField_24;
-	private JTextField textField_25;
-	private JLabel label_3;
-	private JTextField textField_26;
-	private JTextField textField_27;
-	private JTextField textField_28;
-	private JTextField textField_29;
-	private JTextField textField_30;
-	private JTextField textField_31;
-	private JLabel label_4;
-	private JTextField textField_32;
-	private JTextField textField_33;
-	private JTextField textField_34;
-	private JTextField textField_35;
-	private JTextField textField_36;
-	private JTextField textField_37;
-	private JLabel label_5;
-	private JTextField textField_38;
-	private JTextField textField_39;
-	private JTextField textField_40;
-	private JTextField textField_41;
-	private JTextField textField_42;
-	private JTextField textField_43;
-	private JLabel label_6;
-	private JTextField textField_44;
-	private JTextField textField_45;
-	private JTextField textField_46;
-	private JTextField textField_47;
-	private JTextField textField_48;
-	private JTextField textField_49;
-	private JLabel label_7;
-	private JTextField textField_50;
-	private JTextField textField_51;
-	private JTextField textField_52;
-	private JTextField textField_53;
-	private JTextField textField_54;
-	private JTextField textField_55;
-	private JTextField textField_56;
-	private JTextField textField_57;
-	private JTextField textField_58;
-	private JTextField textField_59;
-	private JTextField textField_60;
-	private JTextField textField_61;
-	private JLabel label_8;
-	private JLabel label_9;
-	private JTextField textField_62;
-	private JTextField textField_63;
-	private JTextField textField_64;
-	private JTextField textField_65;
-	private JTextField textField_66;
-	private JTextField textField_67;
-	private JLabel label_10;
-	private JTextField textField_68;
-	private JTextField textField_69;
-	private JTextField textField_70;
-	private JTextField textField_71;
-	private JTextField textField_72;
-	private JTextField textField_73;
-	private JTextField textField_74;
-	private JTextField textField_75;
-	private JTextField textField_76;
-	private JTextField textField_77;
-	private JTextField textField_78;
-	private JTextField textField_79;
-	private JLabel label_11;
-	private JLabel label_12;
-	private JTextField textField_80;
-	private JTextField textField_81;
-	private JTextField textField_82;
-	private JTextField textField_83;
-	private JTextField textField_84;
-	private JTextField textField_85;
-	private JLabel label_13;
-	private JTextField textField_86;
-	private JTextField textField_87;
-	private JTextField textField_88;
-	private JTextField textField_89;
-	private JTextField textField_90;
-	private JTextField textField_91;
-	private JLabel label_14;
-	private JTextField textField_92;
-	private JTextField textField_93;
-	private JTextField textField_94;
-	private JTextField textField_95;
-	private JTextField textField_96;
-	private JTextField textField_97;
-	private JLabel label_15;
-	private JTextField textField_98;
-	private JTextField textField_99;
-	private JTextField textField_100;
-	private JTextField textField_101;
-	private JTextField textField_102;
-	private JTextField textField_103;
-	private JLabel lblNewLabel_1;
+	public JPanel contentPane;
+	public Color red = new Color(195, 0, 45);
+	public Color grey = new Color(228, 231, 226);
+	public Color darkGrey = new Color(187, 192, 188);
+	public Color lightGrey = new Color(239, 240, 240);
+	public JTextField txtAv;
+	public JTextField txtLinje;
+	public JTextField txtMot;
+	public JTextField txtNstaAvgng;
+	public JTextField txtHpl;
+	public JTextField textField_2;
+	public JTextField textField_3;
+	public JTextField textField_4;
+	public JTextField textField_5;
+	public JTextField textField_6;
+	public JTextField textField_7;
+	public JLabel lblNewLabel;
+	public JLabel label;
+	public JTextField textField_8;
+	public JTextField textField_9;
+	public JTextField textField_10;
+	public JTextField textField_11;
+	public JTextField textField_12;
+	public JTextField textField_13;
+	public JLabel label_1;
+	public JTextField textField_14;
+	public JTextField textField_15;
+	public JTextField textField_16;
+	public JTextField textField_17;
+	public JTextField textField_18;
+	public JTextField textField_19;
+	public JLabel label_2;
+	public JTextField textField_20;
+	public JTextField textField_21;
+	public JTextField textField_22;
+	public JTextField textField_23;
+	public JTextField textField_24;
+	public JTextField textField_25;
+	public JLabel label_3;
+	public JTextField textField_26;
+	public JTextField textField_27;
+	public JTextField textField_28;
+	public JTextField textField_29;
+	public JTextField textField_30;
+	public JTextField textField_31;
+	public JLabel label_4;
+	public JTextField textField_32;
+	public JTextField textField_33;
+	public JTextField textField_34;
+	public JTextField textField_35;
+	public JTextField textField_36;
+	public JTextField textField_37;
+	public JLabel label_5;
+	public JTextField textField_38;
+	public JTextField textField_39;
+	public JTextField textField_40;
+	public JTextField textField_41;
+	public JTextField textField_42;
+	public JTextField textField_43;
+	public JLabel label_6;
+	public JTextField textField_44;
+	public JTextField textField_45;
+	public JTextField textField_46;
+	public JTextField textField_47;
+	public JTextField textField_48;
+	public JTextField textField_49;
+	public JLabel label_7;
+	public JTextField textField_50;
+	public JTextField textField_51;
+	public JTextField textField_52;
+	public JTextField textField_53;
+	public JTextField textField_54;
+	public JTextField textField_55;
+	public JTextField textField_56;
+	public JTextField textField_57;
+	public JTextField textField_58;
+	public JTextField textField_59;
+	public JTextField textField_60;
+	public JTextField textField_61;
+	public JLabel label_8;
+	public JLabel label_9;
+	public JTextField textField_62;
+	public JTextField textField_63;
+	public JTextField textField_64;
+	public JTextField textField_65;
+	public JTextField textField_66;
+	public JTextField textField_67;
+	public JLabel label_10;
+	public JTextField textField_68;
+	public JTextField textField_69;
+	public JTextField textField_70;
+	public JTextField textField_71;
+	public JTextField textField_72;
+	public JTextField textField_73;
+	public JTextField textField_74;
+	public JTextField textField_75;
+	public JTextField textField_76;
+	public JTextField textField_77;
+	public JTextField textField_78;
+	public JTextField textField_79;
+	public JLabel label_11;
+	public JLabel label_12;
+	public JTextField textField_80;
+	public JTextField textField_81;
+	public JTextField textField_82;
+	public JTextField textField_83;
+	public JTextField textField_84;
+	public JTextField textField_85;
+	public JLabel label_13;
+	public JTextField textField_86;
+	public JTextField textField_87;
+	public JTextField textField_88;
+	public JTextField textField_89;
+	public JTextField textField_90;
+	public JTextField textField_91;
+	public JLabel label_14;
+	public JTextField textField_92;
+	public JTextField textField_93;
+	public JTextField textField_94;
+	public JTextField textField_95;
+	public JTextField textField_96;
+	public JTextField textField_97;
+	public JLabel label_15;
+	public JTextField textField_98;
+	public JTextField textField_99;
+	public JTextField textField_100;
+	public JTextField textField_101;
+	public JTextField textField_102;
+	public JTextField textField_103;
+	public JLabel lblNewLabel_1;
+
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -936,49 +944,37 @@ public class SkanetrafikenGUI extends JFrame {
 		textField_103.setBounds(819, 974, 124, 42);
 		panel.add(textField_103);
 		contentPane.setLayout(gl_contentPane);
-
-		new getJourney().start();
-
+	
+		
+		new getBernstorp().start();
+		
+		
 	}
 
-	
-	
-	
-	public class getJourney extends Thread{
-
+	public class getSegevang extends Thread {
 		@Override
 		public void run() {
-
-			String searchURL = Constants.getURL("80000", "80110", 8);
-
+			String searchURL = Constants.getURL("80000", "80200", 3);
 			Journeys journeys = Parser.getJourneys(searchURL);
 
 			for (Journey journey : journeys.getJourneys()) {
+<<<<<<< HEAD
 				int fyran1 = 4;
 
 				int attan = 8;
 
 				int femman = 5;
+=======
+				int fyran = 4;
+>>>>>>> master
 				
 				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"
 						+ journey.getDepDateTime().get(Calendar.MINUTE);
 
 				try {
-					if (Integer.parseInt(journey.getLineOnFirstJourney()) == fyran1) {
-						textField_4.setText(journey.getLineOnFirstJourney());
-						textField_5.setText(journey.getTimeToDeparture());
-					
-
-						textField_2.setText(journey.getEndStation().toString());
-
-						System.out.println(" Departs " + time + " " + " that is in " + journey.getTimeToDeparture()
-								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
-
-					} else if (Integer.parseInt(journey.getLineOnFirstJourney()) == femman) {
+					if (Integer.parseInt(journey.getLineOnFirstJourney()) == fyran) {
 						System.out.println(journey.getLineOnFirstJourney());
-
-						System.out.print(journey.getStartStation() + " - ");
-
+						System.out.println(journey.getEndStation().toString());
 						System.out.println(" Departs " + time + " " + " that is in " + journey.getTimeToDeparture()
 								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
 
@@ -988,9 +984,41 @@ public class SkanetrafikenGUI extends JFrame {
 					System.out.println("error");
 
 				}
-
 			}
 		}
 
 	}
+	
+	public class getBernstorp extends Thread {
+		@Override
+		public void run() {
+			String searchURL = Constants.getURL("80000", "31033", 20);
+			Journeys journeys = Parser.getJourneys(searchURL);
+
+			for (Journey journey : journeys.getJourneys()) {
+				int fyran = 4;
+				
+				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"
+						+ journey.getDepDateTime().get(Calendar.MINUTE);
+
+				try {
+					if (Integer.parseInt(journey.getLineOnFirstJourney()) == fyran) {
+						textField_4.setText(journey.getLineOnFirstJourney());
+						textField_2.setText(journey.getEndStation().toString());
+						textField_5.setText(" Departs " + time + " " + " that is in " + journey.getTimeToDeparture()
+								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
+						System.out.println("HEJ");
+					}
+
+				} catch (java.lang.NumberFormatException e) {
+					System.out.println("error");
+
+				}
+			}
+		}
+
+	}
+	
+	
+	
 }
