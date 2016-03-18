@@ -35,8 +35,8 @@ import java.awt.SystemColor;
 public class SkanetrafikenGUI extends JFrame {
 
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	public double width = screenSize.getWidth();
-	public double height = screenSize.getHeight();
+	public double width = 1920;//screenSize.getWidth();
+	public double height = 1080;//screenSize.getHeight();
 
 	private JPanel contentPane;
 	private Color red = new Color(195, 0, 45);
@@ -191,7 +191,7 @@ public class SkanetrafikenGUI extends JFrame {
 	public SkanetrafikenGUI() {
 		setUndecorated(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, screenSize.width, screenSize.height);
+		setBounds(0, 0, 1920, 1080);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -959,7 +959,7 @@ public class SkanetrafikenGUI extends JFrame {
 				int attan = 8;
 
 				int femman = 5;
-
+				
 				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"
 						+ journey.getDepDateTime().get(Calendar.MINUTE);
 
