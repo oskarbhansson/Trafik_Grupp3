@@ -933,7 +933,11 @@ public class SkanetrafikenGUI extends JFrame {
 
 	}
 
-	public class getJourney extends Thread {
+	
+	
+	
+	public class getJourney extends Thread{
+
 		@Override
 		public void run() {
 
@@ -943,7 +947,9 @@ public class SkanetrafikenGUI extends JFrame {
 
 			for (Journey journey : journeys.getJourneys()) {
 				int fyran1 = 4;
+
 				int attan = 8;
+
 				int femman = 5;
 
 				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"

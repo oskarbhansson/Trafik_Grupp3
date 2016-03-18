@@ -15,21 +15,21 @@ public class TestClass {
 
 	public static void main(String[] args) {
 
-		/** Deklarerar en string som hämtar värden från constantsKlassen. */
-		String searchURL = Constants.getURL("80000", "81216", 20); // Malmö C =
+		/** Deklarerar en string som hï¿½mtar vï¿½rden frï¿½n constantsKlassen. */
+		String searchURL = Constants.getURL("80000", "81216", 20); // Malmï¿½ C =
 																	// 80000,
 																	// Lund C,
 																	// 81216
-																	// Malmö
+																	// Malmï¿½
 																	// Gatorg
 																	// 80100,
-																	// Hässleholm
+																	// Hï¿½ssleholm
 																	// C 93070
 		System.out.println(searchURL);
 		System.out.println("// Results when searching:");
 		/**
-		 * Strängen används i journey klassen och itererar genom en array som
-		 * hämtar data från skånetrafiken.
+		 * Strï¿½ngen anvï¿½nds i journey klassen och itererar genom en array som
+		 * hï¿½mtar data frï¿½n skï¿½netrafiken.
 		 */
 		Journeys journeys = Parser.getJourneys(searchURL);
 		for (Journey journey : journeys.getJourneys()) {
@@ -44,9 +44,9 @@ public class TestClass {
 		System.out.println("// Stations when searching for stations containing \"Malm\"");
 
 		/**
-		 * Deklarerar en string-array av klassen Station som sedan jämför en
-		 * sträng med objecten som finns arrayn, vilket sedan printar ut
-		 * stationer som liknar given sträng med stationsnummer och namn.
+		 * Deklarerar en string-array av klassen Station som sedan jï¿½mfï¿½r en
+		 * strï¿½ng med objecten som finns arrayn, vilket sedan printar ut
+		 * stationer som liknar given strï¿½ng med stationsnummer och namn.
 		 */
 		ArrayList<Station> searchStations = new ArrayList<Station>();
 		searchStations.addAll(Parser.getStationsFromURL("Malm"));
@@ -54,9 +54,10 @@ public class TestClass {
 			System.out.println(s.getStationName() + " number:" + s.getStationNbr());
 		}
 
-		System.out.println("// Busses departing from Ubåtshallen stationsnummer 80046 ");
+		System.out.println("// Busses departing from Ubï¿½tshallen stationsnummer 80046 ");
 		Lines lines = Parser.getStationResults(new Station("80046"));
 		for (Line l : lines.getLines()) {
+			
 			System.out.println("Line " + l.getLine() + " departs: " + l.getDepTime().get(Calendar.HOUR_OF_DAY) + ":"
 					+ l.getDepTime().get(Calendar.MINUTE) + " and is " + l.getDepTimeDeviation() + " minutes late");
 		}

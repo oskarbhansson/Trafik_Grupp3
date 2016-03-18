@@ -3,6 +3,7 @@ package se.mah.k3lara.skaneAPI.model;
 import java.util.Calendar;
 
 public class Line {
+
 	private String line;
 	private Calendar depTime;
 	private String depTimeDeviation;
@@ -26,6 +27,7 @@ public class Line {
 	public void setDepTimeDeviation(String depTimeDeviation) {
 		this.depTimeDeviation = depTimeDeviation;
 	}
+	
 	
 	//More methods here for the rest of the tags
 	//And perhaps some special methods ????

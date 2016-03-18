@@ -24,4 +24,5 @@ public class Lines {
 		public void clearJourneys() {
 			this.lines.clear();
 		}
+
 }
