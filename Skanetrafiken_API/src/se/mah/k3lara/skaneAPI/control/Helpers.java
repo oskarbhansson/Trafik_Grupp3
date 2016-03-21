@@ -128,6 +128,7 @@ public class Helpers{
 		}
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
+		cal.add(Calendar.MINUTE, 10);
 		long millisDiff = cal.getTimeInMillis() - now.getTimeInMillis();
 		if (millisDiff>0){
 			diffMinutes = ((int)millisDiff/(60*1000));
