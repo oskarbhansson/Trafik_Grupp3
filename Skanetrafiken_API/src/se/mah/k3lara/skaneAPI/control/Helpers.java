@@ -95,14 +95,17 @@ public class Helpers{
     	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
     	Date startDate = null, endDate = null;
 		try {
+			
 			startDate = dateFormat.parse(startTime);
 			endDate = dateFormat.parse(endTime);
 			Calendar calStart = Calendar.getInstance();
 			calStart.setTime(startDate);
+			
 			Calendar calEnd = Calendar.getInstance();
 			calEnd.setTime(endDate);
 			long millisTravel = calEnd.getTimeInMillis() - calStart.getTimeInMillis();
 			diffMinutes = ((int)millisTravel/(60*1000));
+			
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}	
@@ -118,9 +121,11 @@ public class Helpers{
     	int diffMinutes=-1;
     	Calendar now = Calendar.getInstance();
     	now.setTime(new Date());
+    	
     	//now.setTimeZone(TimeZone.getTimeZone("Europe/Stockholm"));
     	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
     	Date date =null;
+    	
 		try {
 			date = dateFormat.parse(startTime);
 		} catch (ParseException e) {
@@ -128,6 +133,7 @@ public class Helpers{
 		}
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
+		cal.add(Calendar.MINUTE, 10);
 		long millisDiff = cal.getTimeInMillis() - now.getTimeInMillis();
 		if (millisDiff>0){
 			diffMinutes = ((int)millisDiff/(60*1000));
