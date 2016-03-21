@@ -37,36 +37,69 @@ public class timeTableLogic {
 		this.line = line;
 		this.endStation = endStation;
 		
+<<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> origin/master
+=======
+		
+>>>>>>> origin/master
 		
 		String searchURL = Constants.getURL(from, to, 10);
+		
 		Journeys journeys = Parser.getJourneys(searchURL);
-
+		
+		
 		for (Journey journey : journeys.getJourneys()) {
 
 
 			try {
+				
 				if (Integer.parseInt(journey.getLineOnFirstJourney()) == lineNr) {
 					line.setText(journey.getLineOnFirstJourney());
 					endStation.setText(journey.getEndStation().toString());
 					//timetodep.setText(journey.getTimeToDeparture()+ " min");
 					//timetodep2.setText(journey.getTimeToDeparture()+ " min");
 					//timetodep3.setText(journey.getTimeToDeparture() + " min");
+<<<<<<< HEAD
 					timetodep.setText(journeys.getJourneys().get(0).getTimeToDeparture() + " min");
 					timetodep2.setText(journeys.getJourneys().get(1).getTimeToDeparture() + " min");
 					timetodep3.setText(journeys.getJourneys().get(2).getTimeToDeparture() + " min");
 
+=======
+					timetodep.setText(journeys.getJourneys().get(0).getTimeToDeparture()+ " min");
+					timetodep2.setText(journeys.getJourneys().get(1).getTimeToDeparture()+ " min");
+					timetodep3.setText(journeys.getJourneys().get(2).getTimeToDeparture()+ " min");
+					
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
+>>>>>>> origin/master
 				}
+				
 				
 			} catch (java.lang.NumberFormatException e) {
 				System.out.println("error with: " + to);
 
 			}
+			
 		}
+		
+		
 	}
 		
 		
 
 	
+<<<<<<< HEAD
+=======
+	
+
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
+>>>>>>> origin/master
 
 }
