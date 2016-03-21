@@ -37,6 +37,8 @@ public class timeTableLogic {
 		this.line = line;
 		this.endStation = endStation;
 		
+
+		
 		String searchURL = Constants.getURL(from, to, 10);
 		Journeys journeys = Parser.getJourneys(searchURL);
 
@@ -50,9 +52,9 @@ public class timeTableLogic {
 					//timetodep.setText(journey.getTimeToDeparture()+ " min");
 					//timetodep2.setText(journey.getTimeToDeparture()+ " min");
 					//timetodep3.setText(journey.getTimeToDeparture() + " min");
-					timetodep.setText(journeys.getJourneys().get(0).getTimeToDeparture()+ " min");
-					timetodep2.setText(journeys.getJourneys().get(1).getTimeToDeparture()+ " min");
-					timetodep3.setText(journeys.getJourneys().get(2).getTimeToDeparture()+ " min");
+					timetodep.setText(journeys.getJourneys().get(0).getTimeToDeparture() + " min");
+					timetodep2.setText(journeys.getJourneys().get(1).getTimeToDeparture() + " min");
+					timetodep3.setText(journeys.getJourneys().get(2).getTimeToDeparture() + " min");
 
 				}
 				
@@ -66,7 +68,5 @@ public class timeTableLogic {
 		
 
 	
-	
-	SkanetrafikenGUI skanetrafikenGUI = new SkanetrafikenGUI();
 
 }

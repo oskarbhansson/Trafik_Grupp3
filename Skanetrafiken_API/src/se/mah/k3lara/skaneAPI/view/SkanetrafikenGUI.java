@@ -1160,14 +1160,14 @@ public class SkanetrafikenGUI extends JFrame {
 		new Limhamn().start();
 		new Segevang().start();
 		new Bernstorp().start();
-		//new Bunkeflostrand().start();
+		new Bunkeflostrand().start();
 		
 		
 		
 		
 	}
 
-	
+
 	public class Limhamn extends Thread {
 		@Override
 		public void run() {
@@ -1192,6 +1192,7 @@ public class SkanetrafikenGUI extends JFrame {
 		public void run() {
 			try {
 				Thread.sleep(2000);
+
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -1203,6 +1204,7 @@ public class SkanetrafikenGUI extends JFrame {
 		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
 		
 		}
+
 
 	}
 	
@@ -1218,6 +1220,21 @@ public class SkanetrafikenGUI extends JFrame {
 			
 			Bernstorp = new timeTableLogic(4, "80000", "31033", textField_8, textField_9, textField_10, textField_11, textField_12);	
 			
+		}
+
+		
+		
+		}
+
+	
+
+	
+	public class Bunkeflostrand extends Thread {
+		@Override
+		public void run() {
+			
+			Bunkeflostrand = new timeTableLogic(4, "80000", "80049", textField_14, textField_15, textField_16, textField_17, textField_18);
+			
 			
 
 		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
@@ -1225,22 +1242,8 @@ public class SkanetrafikenGUI extends JFrame {
 		}
 
 	}
+	
 }
 	
-//	public class Bunkeflostrand extends Thread {
-//		@Override
-//		public void run() {
-//			
-//			Bunkeflostrand = new timeTableLogic(4, "80000", "80049", textField_14, textField_15, textField_16, textField_17, textField_18);
-//			
-//			
-//
-//		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
-//		
-//		}
-//
-//	}
-//	
-	
-	
+
 
