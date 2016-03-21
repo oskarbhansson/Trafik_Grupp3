@@ -276,6 +276,7 @@ public timeTableLogic TableLogic;
 		txtAv.setEditable(false);
 		txtAv.setFont(new Font("OpenSans-Regular", Font.PLAIN, 40));
 		txtAv.setText("Avg\u00E5ngar fr\u00E5n Malm\u00F6 central");
+		txtAv.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtAv.setBackground(red);
 		txtAv.setBounds(12, 0, 931, 42);
 		panel.add(txtAv);
@@ -283,6 +284,7 @@ public timeTableLogic TableLogic;
 
 		txtLinje = new JTextField();
 		txtLinje.setForeground(Color.WHITE);
+		txtLinje.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtLinje.setBackground(red);
 		txtLinje.setFont(new Font("OpenSans-Regular", Font.PLAIN, 40));
 		txtLinje.setText("Linje");
@@ -292,6 +294,7 @@ public timeTableLogic TableLogic;
 
 		txtMot = new JTextField();
 		txtMot.setForeground(Color.WHITE);
+		txtMot.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtMot.setBackground(red);
 		txtMot.setFont(new Font("OpenSans-Regular", Font.PLAIN, 40));
 		txtMot.setText("Mot");
@@ -301,6 +304,7 @@ public timeTableLogic TableLogic;
 
 		txtNstaAvgng = new JTextField();
 		txtNstaAvgng.setForeground(Color.WHITE);
+		txtNstaAvgng.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtNstaAvgng.setBackground(red);
 		txtNstaAvgng.setText("N\u00E4sta avg\u00E5ng");
 		txtNstaAvgng.setFont(new Font("OpenSans-Regular", Font.PLAIN, 40));
@@ -309,6 +313,7 @@ public timeTableLogic TableLogic;
 		panel.add(txtNstaAvgng);
 
 		txtHpl = new JTextField();
+		txtHpl.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtHpl.setForeground(Color.WHITE);
 		txtHpl.setBackground(red);
 		txtHpl.setText("Hpl");
@@ -331,6 +336,7 @@ public timeTableLogic TableLogic;
 		textField_3.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		textField_3.setColumns(10);
 		textField_3.setBounds(819, 98, 124, 42);
+		textField_3.setBackground(white);
 		panel.add(textField_3);
 
 		textField_4 = new JTextField();
@@ -339,7 +345,7 @@ public timeTableLogic TableLogic;
 		textField_4.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		panel.add(textField_4);
 		textField_4.setColumns(10);
-		textField_4.setBackground(new Color(255,255,255,150));
+		textField_4.setBackground(white);
 
 		textField_5 = new JTextField();
 		textField_5.setBorder(javax.swing.BorderFactory.createEmptyBorder());
@@ -347,6 +353,7 @@ public timeTableLogic TableLogic;
 		textField_5.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		textField_5.setBounds(500, 98, 103, 42);
 		panel.add(textField_5);
+		textField_5.setBackground(white);
 
 		textField_6 = new JTextField();
 		textField_6.setBorder(javax.swing.BorderFactory.createEmptyBorder());
@@ -354,6 +361,7 @@ public timeTableLogic TableLogic;
 		textField_6.setBounds(603, 98, 103, 42);
 		textField_6.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		panel.add(textField_6);
+		textField_6.setBackground(white);
 
 		textField_7 = new JTextField();
 		textField_7.setBorder(javax.swing.BorderFactory.createEmptyBorder());
@@ -361,6 +369,7 @@ public timeTableLogic TableLogic;
 		textField_7.setBounds(706, 98, 103, 42);
 		textField_7.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		panel.add(textField_7);
+		textField_7.setBackground(white);
 
 		lblNewLabel = new JLabel("New label");
 		lblNewLabel.setBounds(22, 98, 42, 42);
@@ -1167,18 +1176,14 @@ public timeTableLogic TableLogic;
 		}
 		
 		
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 		new Limhamn().start();
 		new Segevang().start();
 		new Bernstorp().start();
 		new Bunkeflostrand().start();
 		
 		
-		
-=======
-=======
->>>>>>> origin/master
+
 		new Limhamn().start();;
 		new Segevang().start();;
 		new Bernstorp().start();;
@@ -1189,11 +1194,7 @@ public timeTableLogic TableLogic;
 		new Kaglinge().start();;
 		new Falsterbo().start();;
 		new Trelleborg().start();;
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
-		
+
 	
 	}
 
@@ -1225,18 +1226,16 @@ public timeTableLogic TableLogic;
 		public void run() {
 			while(true){
 			try {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 				Thread.sleep(2000);
 
-=======
+
 				//Segevang = null;
 				Thread.sleep(sleepTime);
->>>>>>> origin/master
-=======
+
 				//Segevang = null;
 				Thread.sleep(sleepTime);
->>>>>>> origin/master
+
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -1250,10 +1249,7 @@ public timeTableLogic TableLogic;
 		
 		}
 		}
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 
 	}
 	
@@ -1272,44 +1268,25 @@ public timeTableLogic TableLogic;
 			}
 			
 			Bernstorp = new timeTableLogic(4, "80000", "31033", textField_8, textField_9, textField_10, textField_11, textField_12);	
-			
-<<<<<<< HEAD
-<<<<<<< HEAD
-		}
 
-		
-		
-		}
-
-	
-=======
-=======
->>>>>>> origin/master
 
 		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
 		
 		}
 		}
 	}
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 
 	
 	public class Bunkeflostrand extends Thread {
 		@Override
 		public void run() {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 			
 			Bunkeflostrand = new timeTableLogic(4, "80000", "80049", textField_14, textField_15, textField_16, textField_17, textField_18);
 			
-=======
-			while(true){
-			try {
-				//Bunkeflostrand = null;
-=======
+
+			
+
 			while(true){
 			try {
 				//Bunkeflostrand = null;
@@ -1327,52 +1304,50 @@ public timeTableLogic TableLogic;
 		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
 		
 		}
+			
 	}
-	}
+		}
+	
+			
 	public class Fullriggaren extends Thread {
 		@Override
 		public void run() {
 			while(true){
 			try {
 				//Fullriggaren  = null;
->>>>>>> origin/master
+
 				Thread.sleep(sleepTime);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				return;
 			}
-			
-<<<<<<< HEAD
-			Bunkeflostrand = new timeTableLogic(4, "80000", "80049", textField_14, textField_15, textField_16, textField_17, textField_18);
-=======
+
 			Fullriggaren = new timeTableLogic(2, "80000", "80080", textField_26, textField_27, textField_28, textField_29, textField_30);
->>>>>>> origin/master
+
 			
 			
 
 		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
 		
 		}
-<<<<<<< HEAD
+
 	}
 	}
-	public class Fullriggaren extends Thread {
-=======
-		}
-	}
+
+	
 	
 	public class Lindangen extends Thread {
->>>>>>> origin/master
+
 		@Override
 		public void run() {
 			while(true){
 			try {
-<<<<<<< HEAD
+
 				//Fullriggaren  = null;
-=======
+
 				//Lindangen  = null;
->>>>>>> origin/master
+
 				Thread.sleep(sleepTime);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -1380,14 +1355,12 @@ public timeTableLogic TableLogic;
 				return;
 			}
 			
-<<<<<<< HEAD
-			Fullriggaren = new timeTableLogic(2, "80000", "80080", textField_26, textField_27, textField_28, textField_29, textField_30);
 			
->>>>>>> origin/master
-=======
+
+
 			Lindangen = new timeTableLogic(2, "80000", "80600", textField_32, textField_33, textField_34, textField_35, textField_36);
 			
->>>>>>> origin/master
+
 			
 
 		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
@@ -1395,33 +1368,30 @@ public timeTableLogic TableLogic;
 		}
 		}
 	}
-<<<<<<< HEAD
-	
-	public class Lindangen extends Thread {
-=======
+
+
+
 	public class Ostrahamnen extends Thread {
->>>>>>> origin/master
+
 		@Override
 		public void run() {
 			while(true){
 			try {
-<<<<<<< HEAD
+
 				//Lindangen  = null;
-=======
+
 				//OstraHamnen  = null;
->>>>>>> origin/master
+
 				Thread.sleep(sleepTime);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				return;
 			}
-			
-<<<<<<< HEAD
-			Lindangen = new timeTableLogic(2, "80000", "80600", textField_32, textField_33, textField_34, textField_35, textField_36);
-=======
+		
+
 			OstraHamnen = new timeTableLogic(32, "80000", "80020", textField_38, textField_39, textField_40, textField_41, textField_42);
->>>>>>> origin/master
+
 			
 			
 
@@ -1430,20 +1400,20 @@ public timeTableLogic TableLogic;
 		}
 		}
 	}
-<<<<<<< HEAD
-	public class Ostrahamnen extends Thread {
-=======
+
+	
+
 	public class Kaglinge extends Thread {
->>>>>>> origin/master
+
 		@Override
 		public void run() {
 			while(true){
 			try {
-<<<<<<< HEAD
+
 				//OstraHamnen  = null;
-=======
+
 				//Kaglinge  = null;
->>>>>>> origin/master
+
 				Thread.sleep(sleepTime);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -1451,11 +1421,9 @@ public timeTableLogic TableLogic;
 				return;
 			}
 			
-<<<<<<< HEAD
-			OstraHamnen = new timeTableLogic(32, "80000", "80020", textField_38, textField_39, textField_40, textField_41, textField_42);
-=======
+
 			Kaglinge = new timeTableLogic(32, "80000", "80740", textField_44, textField_45, textField_46, textField_47, textField_48);
->>>>>>> origin/master
+
 			
 			
 
@@ -1464,21 +1432,21 @@ public timeTableLogic TableLogic;
 		}
 		}
 	}
-<<<<<<< HEAD
-	public class Kaglinge extends Thread {
-=======
+
+
+
 	
 	public class Falsterbo extends Thread {
->>>>>>> origin/master
+
 		@Override
 		public void run() {
 			while(true){
 			try {
-<<<<<<< HEAD
+
 				//Kaglinge  = null;
-=======
+
 				//Falsterbo  = null;
->>>>>>> origin/master
+
 				Thread.sleep(sleepTime);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -1486,11 +1454,9 @@ public timeTableLogic TableLogic;
 				return;
 			}
 			
-<<<<<<< HEAD
-			Kaglinge = new timeTableLogic(32, "80000", "80740", textField_44, textField_45, textField_46, textField_47, textField_48);
-=======
+
 			Falsterbo = new timeTableLogic(100, "80000", "33029", textField_50, textField_51, textField_52, textField_53, textField_54);
->>>>>>> origin/master
+
 			
 			
 
@@ -1498,31 +1464,10 @@ public timeTableLogic TableLogic;
 		
 		}
 		}
-<<<<<<< HEAD
+
 	}
 	
-	public class Falsterbo extends Thread {
-		@Override
-		public void run() {
-			while(true){
-			try {
-				//Falsterbo  = null;
-				Thread.sleep(sleepTime);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				return;
-			}
-			
-			Falsterbo = new timeTableLogic(100, "80000", "33029", textField_50, textField_51, textField_52, textField_53, textField_54);
-			
-			
 
-		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
-		
-		}
-		}
-	}
 	public class Trelleborg extends Thread {
 		@Override
 		public void run() {
@@ -1549,42 +1494,8 @@ public timeTableLogic TableLogic;
 	
 	
 	}
-<<<<<<< HEAD
-=======
-	
->>>>>>> origin/master
-=======
-	}
-	public class Trelleborg extends Thread {
-		@Override
-		public void run() {
-			while(true){
-			try {
-				//Trelleborg  = null;
-				Thread.sleep(sleepTime);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				return;
 
-			}
-			
-			Trelleborg = new timeTableLogic(146, "80000", "87071", textField_58, textField_56, textField_59, textField_60, textField_61);
-			
-			
 
-		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
-		
-		}
-		}
-	}
-	
-	
-	}
-	
->>>>>>> origin/master
-	
-}
 	
 
 
