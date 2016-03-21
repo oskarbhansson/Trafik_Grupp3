@@ -38,7 +38,11 @@ public class timeTableLogic {
 		this.endStation = endStation;
 		
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> origin/master
 =======
 		
 >>>>>>> origin/master
@@ -69,6 +73,9 @@ public class timeTableLogic {
 					timetodep2.setText(journeys.getJourneys().get(1).getTimeToDeparture()+ " min");
 					timetodep3.setText(journeys.getJourneys().get(2).getTimeToDeparture()+ " min");
 					
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
 				}
 				
@@ -90,6 +97,9 @@ public class timeTableLogic {
 =======
 	
 
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
 
 }
