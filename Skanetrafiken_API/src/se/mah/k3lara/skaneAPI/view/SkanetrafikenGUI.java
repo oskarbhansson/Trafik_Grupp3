@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import javax.swing.JFrame;
@@ -15,6 +16,9 @@ import javax.swing.border.EmptyBorder;
 import se.mah.k3lara.skaneAPI.control.Constants;
 import se.mah.k3lara.skaneAPI.model.Journey;
 import se.mah.k3lara.skaneAPI.model.Journeys;
+import se.mah.k3lara.skaneAPI.model.Line;
+import se.mah.k3lara.skaneAPI.model.Lines;
+import se.mah.k3lara.skaneAPI.model.Station;
 import se.mah.k3lara.skaneAPI.view.*;
 import se.mah.k3lara.skaneAPI.view.timeTableLogic.getBernstorp;
 import se.mah.k3lara.skaneAPI.view.timeTableLogic.getSegevang;
@@ -1022,6 +1026,7 @@ public class SkanetrafikenGUI extends JFrame {
 		new getKaglinge().start();
 		new getFalsterbo().start();
 		new getTrelleborg().start();
+		new getVellinge().start();
 		
 		
 	}
@@ -1051,7 +1056,7 @@ public class SkanetrafikenGUI extends JFrame {
 					}
 
 				} catch (java.lang.NumberFormatException e) {
-					System.out.println("error");
+					System.out.println("errorSegevang");
 
 				}
 			}
@@ -1081,7 +1086,7 @@ public class SkanetrafikenGUI extends JFrame {
 					}
 
 				} catch (java.lang.NumberFormatException e) {
-					System.out.println("error");
+					System.out.println("errorBernstorp");
 
 				}
 			}
@@ -1114,7 +1119,7 @@ public class SkanetrafikenGUI extends JFrame {
 					}
 
 				} catch (java.lang.NumberFormatException e) {
-					System.out.println("error");
+					System.out.println("errorBunkeflostrand");
 
 				}
 			}
@@ -1147,7 +1152,7 @@ public class SkanetrafikenGUI extends JFrame {
 					}
 
 				} catch (java.lang.NumberFormatException e) {
-					System.out.println("error");
+					System.out.println("errorLimhamn");
 
 				}
 			}
@@ -1176,7 +1181,12 @@ public class SkanetrafikenGUI extends JFrame {
 						textField_27.setText(journey.getEndStation().toString());
 						textField_28.setText( journey.getTimeToDeparture()
 								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
-
+						Lines lines = Parser.getStationResults(new Station("80000"));
+						for(Line l : lines.getLines())
+							if (Integer.parseInt(l.getLine()) == tva)
+						System.out.println(l.getLine() + " departs " + l.getDepTime().get(Calendar.HOUR_OF_DAY) + ":"
+								+ l.getDepTime().get(Calendar.MINUTE) + " " + journey.getTimeToDeparture());
+						
 					}
 
 				} catch (java.lang.NumberFormatException e) {
@@ -1213,7 +1223,7 @@ public class SkanetrafikenGUI extends JFrame {
 					}
 
 				} catch (java.lang.NumberFormatException e) {
-					System.out.println("error");
+					System.out.println("errorLindangen");
 
 				}
 			}
@@ -1246,7 +1256,7 @@ public class SkanetrafikenGUI extends JFrame {
 					}
 
 				} catch (java.lang.NumberFormatException e) {
-					System.out.println("error");
+					System.out.println("errorOstraHamnen");
 
 				}
 			}
@@ -1280,7 +1290,7 @@ public class SkanetrafikenGUI extends JFrame {
 					}
 
 				} catch (java.lang.NumberFormatException e) {
-					System.out.println("error");
+					System.out.println("errorKaglinge");
 
 				}
 			}
@@ -1291,7 +1301,7 @@ public class SkanetrafikenGUI extends JFrame {
 	public class getFalsterbo extends Thread {
 		@Override
 		public void run() {
-			String searchURL = Constants.getURL("80000", "80740", 50);
+			String searchURL = Constants.getURL("80000", "33029", 50);
 			Journeys journeys = Parser.getJourneys(searchURL);
 
 			for (Journey journey : journeys.getJourneys()) {
@@ -1324,7 +1334,7 @@ public class SkanetrafikenGUI extends JFrame {
 	public class getTrelleborg extends Thread {
 		@Override
 		public void run() {
-			String searchURL = Constants.getURL("80000", "80740", 50);
+			String searchURL = Constants.getURL("80000", "87071", 50);
 			Journeys journeys = Parser.getJourneys(searchURL);
 
 			for (Journey journey : journeys.getJourneys()) {
@@ -1346,7 +1356,47 @@ public class SkanetrafikenGUI extends JFrame {
 					}
 
 				} catch (java.lang.NumberFormatException e) {
-					System.out.println("errorFalsterbo");
+					System.out.println("errorTrelleborg");
+
+				}
+			}
+		}
+
+	}
+	
+	public class getVellinge extends Thread {
+		@Override
+		public void run() {
+			String searchURL = Constants.getURL("80000", "33031", 50);
+			Journeys journeys = Parser.getJourneys(searchURL);
+
+			for (Journey journey : journeys.getJourneys()) {
+
+				int hundrafemtio = 150;
+
+
+				
+				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"
+						+ journey.getDepDateTime().get(Calendar.MINUTE);
+
+				try {
+					if (Integer.parseInt(journey.getLineOnFirstJourney()) == hundrafemtio) {
+						textField_58.setText(journey.getLineOnFirstJourney());
+						textField_56.setText(journey.getEndStation().toString());
+						textField_59.setText( journey.getTimeToDeparture()
+								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
+						
+						Lines lines = Parser.getStationResults(new Station("80000"));
+						for(Line l : lines.getLines()){
+							if (Integer.parseInt(l.getLine()) == hundrafemtio){
+						System.out.println(l.getLine() + " DEPARTS " + l.getDepTime().get(Calendar.HOUR_OF_DAY) + ":"
+								+ l.getDepTime().get(Calendar.MINUTE)+ " " + journey.getTimeToDeparture());
+						}}
+
+					}
+
+				} catch (java.lang.NumberFormatException e) {
+					System.out.println("errorVellinge");
 
 				}
 			}

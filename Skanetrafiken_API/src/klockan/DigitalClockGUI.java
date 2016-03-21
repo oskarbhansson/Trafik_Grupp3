@@ -61,7 +61,7 @@ public class DigitalClockGUI extends JFrame {
 		
 		lblKlockanr = new JLabel("00:00:00");
 		lblKlockanr.setFont(new Font("Vladimir Script", Font.PLAIN, 60));
-		lblKlockanr.setBounds(93, 11, 240, 111);
+		lblKlockanr.setBounds(93, 11, 296, 111);
 		contentPane.add(lblKlockanr);
 
 		
