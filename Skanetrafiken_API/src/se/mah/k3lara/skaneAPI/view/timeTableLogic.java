@@ -57,7 +57,7 @@ public class timeTableLogic {
 				}
 				
 			} catch (java.lang.NumberFormatException e) {
-				System.out.println("error with: " + lineNr);
+				System.out.println("error with: " + to);
 
 			}
 		}
