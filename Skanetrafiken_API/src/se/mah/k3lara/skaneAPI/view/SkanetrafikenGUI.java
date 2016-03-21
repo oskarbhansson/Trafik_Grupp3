@@ -57,10 +57,12 @@ public class SkanetrafikenGUI extends JFrame {
 	
 
 	public JPanel contentPane;
-	public Color red = new Color(195, 0, 45);
-	public Color grey = new Color(228, 231, 226);
+	public Color red = new Color(195, 0, 45, 200);
+	public Color grey = new Color(228, 231, 226, 150);
 	public Color darkGrey = new Color(187, 192, 188);
-	public Color lightGrey = new Color(250, 250, 250);
+	public Color lightGrey = new Color(250, 250, 250, 150);
+	public Color white = new Color(255,255,255,220);
+	
 	public JTextField txtAv;
 	public JTextField txtLinje;
 	public JTextField txtMot;
@@ -320,6 +322,7 @@ public timeTableLogic TableLogic;
 		textField_2.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_2.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		textField_2.setColumns(10);
+		textField_2.setBackground(white);
 		textField_2.setBounds(184, 98, 309, 42);
 		panel.add(textField_2);
 
@@ -336,6 +339,7 @@ public timeTableLogic TableLogic;
 		textField_4.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		panel.add(textField_4);
 		textField_4.setColumns(10);
+		textField_4.setBackground(new Color(255,255,255,150));
 
 		textField_5 = new JTextField();
 		textField_5.setBorder(javax.swing.BorderFactory.createEmptyBorder());
@@ -1147,6 +1151,11 @@ public timeTableLogic TableLogic;
 		textField_103.setColumns(10);
 		textField_103.setBounds(819, 974, 124, 42);
 		panel.add(textField_103);
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/rapeseed_fields.jpg")));
+		lblNewLabel_2.setBounds(0, 0, 949, 1053);
+		panel.add(lblNewLabel_2);
 		contentPane.setLayout(gl_contentPane);
 	
 		try {
