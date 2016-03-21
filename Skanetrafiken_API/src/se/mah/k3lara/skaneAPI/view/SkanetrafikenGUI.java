@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import javax.swing.JFrame;
@@ -15,9 +16,12 @@ import javax.swing.border.EmptyBorder;
 import se.mah.k3lara.skaneAPI.control.Constants;
 import se.mah.k3lara.skaneAPI.model.Journey;
 import se.mah.k3lara.skaneAPI.model.Journeys;
+import se.mah.k3lara.skaneAPI.model.Line;
+import se.mah.k3lara.skaneAPI.model.Lines;
+import se.mah.k3lara.skaneAPI.model.Station;
 import se.mah.k3lara.skaneAPI.view.*;
-import se.mah.k3lara.skaneAPI.view.timeTableLogic.getBernstorp;
-import se.mah.k3lara.skaneAPI.view.timeTableLogic.getSegevang;
+//import se.mah.k3lara.skaneAPI.view.timeTableLogic.getBernstorp;
+//import se.mah.k3lara.skaneAPI.view.timeTableLogic.getSegevang;
 import se.mah.k3lara.skaneAPI.xmlparser.Parser;
 
 import javax.swing.JTextField;
@@ -38,7 +42,7 @@ import java.awt.SystemColor;
 
 
 public class SkanetrafikenGUI extends JFrame {
-	private timeTableLogic myLogic;
+	//private timeTableLogic myLogic;
 	
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	public double width = 1920;//screenSize.getWidth();
@@ -174,6 +178,23 @@ public class SkanetrafikenGUI extends JFrame {
 	public JTextField textField_102;
 	public JTextField textField_103;
 	public JLabel lblNewLabel_1;
+	public timeTableLogic timeTable;
+	public timeTableLogic timeTable2;
+	public timeTableLogic timeTable3;
+	public timeTableLogic timeTable4;
+	public timeTableLogic timeTable5;
+	public timeTableLogic timeTable6;
+	public timeTableLogic timeTable7;
+	public timeTableLogic timeTable8;
+	public timeTableLogic timeTable9;
+	public timeTableLogic timeTable10;
+	public timeTableLogic timeTable11;
+	public timeTableLogic timeTable12;
+	public timeTableLogic timeTable13;
+	public timeTableLogic timeTable14;
+
+
+
 
 
 	/**
@@ -231,7 +252,7 @@ public class SkanetrafikenGUI extends JFrame {
 
 		lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon(
-				SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/Grafiko-profilo (2).png")));
+		SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/Grafiko-profilo (2).png")));
 		lblNewLabel_1.setBounds(0, 0, 631, 890);
 		panel_1.add(lblNewLabel_1);
 		panel.setLayout(null);
@@ -267,7 +288,7 @@ public class SkanetrafikenGUI extends JFrame {
 		txtNstaAvgng = new JTextField();
 		txtNstaAvgng.setForeground(Color.WHITE);
 		txtNstaAvgng.setBackground(red);
-		txtNstaAvgng.setText("Nästa avgång");
+		txtNstaAvgng.setText("N\u00E4sta avg\u00E5ng");
 		txtNstaAvgng.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		txtNstaAvgng.setColumns(10);
 		txtNstaAvgng.setBounds(500, 47, 309, 42);
@@ -1117,13 +1138,14 @@ public class SkanetrafikenGUI extends JFrame {
 		new getBernstorp().start();
 		new getSegevang().start();
 		new getBunkeflostrand().start();
-		new getLimhamn().start();
+		new getTables().start();
 		new getFullriggaren().start();
 		new getLindangen().start();
 		new getOstraHamnen().start();
 		new getKaglinge().start();
 		new getFalsterbo().start();
 		new getTrelleborg().start();
+		new getVellinge().start();
 		
 		
 	}
@@ -1153,7 +1175,7 @@ public class SkanetrafikenGUI extends JFrame {
 					}
 
 				} catch (java.lang.NumberFormatException e) {
-					System.out.println("error");
+					System.out.println("errorSegevang");
 
 				}
 			}
@@ -1183,7 +1205,7 @@ public class SkanetrafikenGUI extends JFrame {
 					}
 
 				} catch (java.lang.NumberFormatException e) {
-					System.out.println("error");
+					System.out.println("errorBernstorp");
 
 				}
 			}
@@ -1216,7 +1238,7 @@ public class SkanetrafikenGUI extends JFrame {
 					}
 
 				} catch (java.lang.NumberFormatException e) {
-					System.out.println("error");
+					System.out.println("errorBunkeflostrand");
 
 				}
 			}
@@ -1224,35 +1246,13 @@ public class SkanetrafikenGUI extends JFrame {
 
 	}
 	
-	public class getLimhamn extends Thread {
+	public class getTables extends Thread {
 		@Override
 		public void run() {
-			String searchURL = Constants.getURL("80000", "80310", 2);
-			Journeys journeys = Parser.getJourneys(searchURL);
-
-			for (Journey journey : journeys.getJourneys()) {
-
-				int fyran = 4;
-
-
-				
-				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"
-						+ journey.getDepDateTime().get(Calendar.MINUTE);
-
-				try {
-					if (Integer.parseInt(journey.getLineOnFirstJourney()) == fyran) {
-						textField_20.setText(journey.getLineOnFirstJourney());
-						textField_21.setText(journey.getEndStation().toString());
-						textField_22.setText( journey.getTimeToDeparture()
-								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
-
-					}
-
-				} catch (java.lang.NumberFormatException e) {
-					System.out.println("error");
-
-				}
-			}
+		//timeTableLogic(int lineNr, String from, String to, JTextField timetodep, JTextField line, JTextField endStation)
+		timeTable = new timeTableLogic(4, "80000", "80310", textField_20, textField_21, textField_22);
+		
+			
 		}
 
 	}
@@ -1278,7 +1278,12 @@ public class SkanetrafikenGUI extends JFrame {
 						textField_27.setText(journey.getEndStation().toString());
 						textField_28.setText( journey.getTimeToDeparture()
 								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
-
+						Lines lines = Parser.getStationResults(new Station("80000"));
+						for(Line l : lines.getLines())
+							if (Integer.parseInt(l.getLine()) == tva)
+						System.out.println(l.getLine() + " departs " + l.getDepTime().get(Calendar.HOUR_OF_DAY) + ":"
+								+ l.getDepTime().get(Calendar.MINUTE) + " " + journey.getTimeToDeparture());
+						
 					}
 
 				} catch (java.lang.NumberFormatException e) {
@@ -1315,7 +1320,7 @@ public class SkanetrafikenGUI extends JFrame {
 					}
 
 				} catch (java.lang.NumberFormatException e) {
-					System.out.println("error");
+					System.out.println("errorLindangen");
 
 				}
 			}
@@ -1348,7 +1353,7 @@ public class SkanetrafikenGUI extends JFrame {
 					}
 
 				} catch (java.lang.NumberFormatException e) {
-					System.out.println("error");
+					System.out.println("errorOstraHamnen");
 
 				}
 			}
@@ -1382,7 +1387,7 @@ public class SkanetrafikenGUI extends JFrame {
 					}
 
 				} catch (java.lang.NumberFormatException e) {
-					System.out.println("error");
+					System.out.println("errorKaglinge");
 
 				}
 			}
@@ -1393,7 +1398,7 @@ public class SkanetrafikenGUI extends JFrame {
 	public class getFalsterbo extends Thread {
 		@Override
 		public void run() {
-			String searchURL = Constants.getURL("80000", "80740", 50);
+			String searchURL = Constants.getURL("80000", "33029", 50);
 			Journeys journeys = Parser.getJourneys(searchURL);
 
 			for (Journey journey : journeys.getJourneys()) {
@@ -1426,7 +1431,7 @@ public class SkanetrafikenGUI extends JFrame {
 	public class getTrelleborg extends Thread {
 		@Override
 		public void run() {
-			String searchURL = Constants.getURL("80000", "80740", 50);
+			String searchURL = Constants.getURL("80000", "87071", 50);
 			Journeys journeys = Parser.getJourneys(searchURL);
 
 			for (Journey journey : journeys.getJourneys()) {
@@ -1448,7 +1453,47 @@ public class SkanetrafikenGUI extends JFrame {
 					}
 
 				} catch (java.lang.NumberFormatException e) {
-					System.out.println("errorFalsterbo");
+					System.out.println("errorTrelleborg");
+
+				}
+			}
+		}
+
+	}
+	
+	public class getVellinge extends Thread {
+		@Override
+		public void run() {
+			String searchURL = Constants.getURL("80000", "33031", 50);
+			Journeys journeys = Parser.getJourneys(searchURL);
+
+			for (Journey journey : journeys.getJourneys()) {
+
+				int hundrafemtio = 150;
+
+
+				
+				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"
+						+ journey.getDepDateTime().get(Calendar.MINUTE);
+
+				try {
+					if (Integer.parseInt(journey.getLineOnFirstJourney()) == hundrafemtio) {
+						textField_58.setText(journey.getLineOnFirstJourney());
+						textField_56.setText(journey.getEndStation().toString());
+						textField_59.setText( journey.getTimeToDeparture()
+								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
+						
+						Lines lines = Parser.getStationResults(new Station("80000"));
+						for(Line l : lines.getLines()){
+							if (Integer.parseInt(l.getLine()) == hundrafemtio){
+						System.out.println(l.getLine() + " DEPARTS " + l.getDepTime().get(Calendar.HOUR_OF_DAY) + ":"
+								+ l.getDepTime().get(Calendar.MINUTE)+ " " + journey.getTimeToDeparture());
+						}}
+
+					}
+
+				} catch (java.lang.NumberFormatException e) {
+					System.out.println("errorVellinge");
 
 				}
 			}
