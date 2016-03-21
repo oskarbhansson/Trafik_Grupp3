@@ -178,6 +178,23 @@ public class SkanetrafikenGUI extends JFrame {
 	public JTextField textField_102;
 	public JTextField textField_103;
 	public JLabel lblNewLabel_1;
+	public timeTableLogic timeTable;
+	public timeTableLogic timeTable2;
+	public timeTableLogic timeTable3;
+	public timeTableLogic timeTable4;
+	public timeTableLogic timeTable5;
+	public timeTableLogic timeTable6;
+	public timeTableLogic timeTable7;
+	public timeTableLogic timeTable8;
+	public timeTableLogic timeTable9;
+	public timeTableLogic timeTable10;
+	public timeTableLogic timeTable11;
+	public timeTableLogic timeTable12;
+	public timeTableLogic timeTable13;
+	public timeTableLogic timeTable14;
+
+
+
 
 
 	/**
@@ -271,7 +288,7 @@ public class SkanetrafikenGUI extends JFrame {
 		txtNstaAvgng = new JTextField();
 		txtNstaAvgng.setForeground(Color.WHITE);
 		txtNstaAvgng.setBackground(red);
-		txtNstaAvgng.setText("Nästa avgång");
+		txtNstaAvgng.setText("N\u00E4sta avg\u00E5ng");
 		txtNstaAvgng.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		txtNstaAvgng.setColumns(10);
 		txtNstaAvgng.setBounds(500, 47, 309, 42);
@@ -1019,7 +1036,7 @@ public class SkanetrafikenGUI extends JFrame {
 		new getBernstorp().start();
 		new getSegevang().start();
 		new getBunkeflostrand().start();
-		new getLimhamn().start();
+		new getTables().start();
 		new getFullriggaren().start();
 		new getLindangen().start();
 		new getOstraHamnen().start();
@@ -1127,35 +1144,13 @@ public class SkanetrafikenGUI extends JFrame {
 
 	}
 	
-	public class getLimhamn extends Thread {
+	public class getTables extends Thread {
 		@Override
 		public void run() {
-			String searchURL = Constants.getURL("80000", "80310", 2);
-			Journeys journeys = Parser.getJourneys(searchURL);
-
-			for (Journey journey : journeys.getJourneys()) {
-
-				int fyran = 4;
-
-
-				
-				String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY) + ":"
-						+ journey.getDepDateTime().get(Calendar.MINUTE);
-
-				try {
-					if (Integer.parseInt(journey.getLineOnFirstJourney()) == fyran) {
-						textField_20.setText(journey.getLineOnFirstJourney());
-						textField_21.setText(journey.getEndStation().toString());
-						textField_22.setText( journey.getTimeToDeparture()
-								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
-
-					}
-
-				} catch (java.lang.NumberFormatException e) {
-					System.out.println("errorLimhamn");
-
-				}
-			}
+		//timeTableLogic(int lineNr, String from, String to, JTextField timetodep, JTextField line, JTextField endStation)
+		timeTable = new timeTableLogic(4, "80000", "80310", textField_20, textField_21, textField_22);
+		
+			
 		}
 
 	}
