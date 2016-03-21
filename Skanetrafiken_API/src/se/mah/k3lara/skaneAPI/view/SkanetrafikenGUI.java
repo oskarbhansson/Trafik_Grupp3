@@ -1163,7 +1163,7 @@ public class SkanetrafikenGUI extends JFrame {
 	public class getFullriggaren extends Thread {
 		@Override
 		public void run() {
-			String searchURL = Constants.getURL("80000", "80080", 2);
+			String searchURL = Constants.getURL("80000", "80080", 5);
 			Journeys journeys = Parser.getJourneys(searchURL);
 
 			for (Journey journey : journeys.getJourneys()) {
@@ -1182,12 +1182,16 @@ public class SkanetrafikenGUI extends JFrame {
 						textField_28.setText( journey.getTimeToDeparture()
 								+ " minutes. And it is " + journey.getDepTimeDeviation() + " min late");
 						Lines lines = Parser.getStationResults(new Station("80000"));
-						for(Line l : lines.getLines())
-							if (Integer.parseInt(l.getLine()) == tva)
-						System.out.println(l.getLine() + " departs " + l.getDepTime().get(Calendar.HOUR_OF_DAY) + ":"
-								+ l.getDepTime().get(Calendar.MINUTE) + " " + journey.getTimeToDeparture());
+						for(int j = 0; j<lines.getLines().size() ; j++){
+							
+							if (lines.getLines().get(j).getLine().equals("2")){
+						System.out.println("disco" + lines.getLines().get(j).getLine());
+						System.out.println("disco" + lines.getLines().get(j).getDepTime().get(Calendar.HOUR_OF_DAY) + ":" + lines.getLines().get(j).getDepTime().get(Calendar.MINUTE));
+							}
 						
+						}
 					}
+
 
 				} catch (java.lang.NumberFormatException e) {
 					System.out.println("errorFullriggaren");
