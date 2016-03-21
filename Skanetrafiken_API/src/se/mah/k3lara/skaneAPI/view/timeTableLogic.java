@@ -66,7 +66,5 @@ public class timeTableLogic {
 		
 
 	
-	
-	SkanetrafikenGUI skanetrafikenGUI = new SkanetrafikenGUI();
 
 }
