@@ -20,8 +20,8 @@ import se.mah.k3lara.skaneAPI.model.Line;
 import se.mah.k3lara.skaneAPI.model.Lines;
 import se.mah.k3lara.skaneAPI.model.Station;
 import se.mah.k3lara.skaneAPI.view.*;
-import se.mah.k3lara.skaneAPI.view.timeTableLogic.getBernstorp;
-import se.mah.k3lara.skaneAPI.view.timeTableLogic.getSegevang;
+//import se.mah.k3lara.skaneAPI.view.timeTableLogic.getBernstorp;
+//import se.mah.k3lara.skaneAPI.view.timeTableLogic.getSegevang;
 import se.mah.k3lara.skaneAPI.xmlparser.Parser;
 
 import javax.swing.JTextField;
@@ -42,7 +42,7 @@ import java.awt.SystemColor;
 
 
 public class SkanetrafikenGUI extends JFrame {
-	private timeTableLogic myLogic;
+	//private timeTableLogic myLogic;
 	
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	public double width = 1920;//screenSize.getWidth();
@@ -235,7 +235,7 @@ public class SkanetrafikenGUI extends JFrame {
 
 		lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon(
-				SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/Grafiko-profilo (2).png")));
+		SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/Grafiko-profilo (2).png")));
 		lblNewLabel_1.setBounds(0, 0, 631, 890);
 		panel_1.add(lblNewLabel_1);
 		panel.setLayout(null);
