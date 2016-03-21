@@ -1389,6 +1389,7 @@ public class SkanetrafikenGUI extends JFrame {
 						Lines lines = Parser.getStationResults(new Station("80000"));
 						for(Line l : lines.getLines()){
 							if (Integer.parseInt(l.getLine()) == hundrafemtio){
+							
 						System.out.println(l.getLine() + " DEPARTS " + l.getDepTime().get(Calendar.HOUR_OF_DAY) + ":"
 								+ l.getDepTime().get(Calendar.MINUTE)+ " " + journey.getTimeToDeparture());
 						}}
