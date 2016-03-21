@@ -36,16 +36,8 @@ public class timeTableLogic {
 		this.timetodep3 = timetodep3;
 		this.line = line;
 		this.endStation = endStation;
-		
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> origin/master
-=======
-		
->>>>>>> origin/master
+
 		
 		String searchURL = Constants.getURL(from, to, 10);
 		
@@ -63,20 +55,12 @@ public class timeTableLogic {
 					//timetodep.setText(journey.getTimeToDeparture()+ " min");
 					//timetodep2.setText(journey.getTimeToDeparture()+ " min");
 					//timetodep3.setText(journey.getTimeToDeparture() + " min");
-<<<<<<< HEAD
-					timetodep.setText(journeys.getJourneys().get(0).getTimeToDeparture() + " min");
-					timetodep2.setText(journeys.getJourneys().get(1).getTimeToDeparture() + " min");
-					timetodep3.setText(journeys.getJourneys().get(2).getTimeToDeparture() + " min");
 
-=======
 					timetodep.setText(journeys.getJourneys().get(0).getTimeToDeparture()+ " min");
 					timetodep2.setText(journeys.getJourneys().get(1).getTimeToDeparture()+ " min");
 					timetodep3.setText(journeys.getJourneys().get(2).getTimeToDeparture()+ " min");
 					
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
+
 				}
 				
 				
@@ -90,16 +74,6 @@ public class timeTableLogic {
 		
 	}
 		
-		
 
-	
-<<<<<<< HEAD
-=======
-	
-
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 
 }
