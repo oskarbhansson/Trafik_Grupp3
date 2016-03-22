@@ -47,7 +47,7 @@ import java.awt.SystemColor;
 
 
 public class SkanetrafikenGUI extends JFrame {
-	//private timeTableLogic myLogic;
+
 	
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	public double width = 1920;//screenSize.getWidth();
@@ -197,9 +197,12 @@ public class SkanetrafikenGUI extends JFrame {
 	public timeTableLogic Falsterbo;
 	public timeTableLogic Trelleborg;
 	public timeTableLogic Vellinge;
-	public timeTableLogic timeTable12;
-	public timeTableLogic timeTable13;
-	public timeTableLogic timeTable14;
+	public timeTableLogic Svedala;
+	public timeTableLogic Lomma;
+	public timeTableLogic Kristianstad;
+	public timeTableLogic Genarp;
+	public timeTableLogic Långdalen;
+	public timeTableLogic S_vång;
 	public int sleepTime = 900;
 public timeTableLogic TableLogic;
 
@@ -261,6 +264,14 @@ public timeTableLogic TableLogic;
 								.addComponent(panel, GroupLayout.DEFAULT_SIZE, 1067, Short.MAX_VALUE))
 				.addContainerGap()));
 		panel_1.setLayout(null);
+		
+		try {
+		     GraphicsEnvironment ge = 
+		         GraphicsEnvironment.getLocalGraphicsEnvironment();
+		     ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("OpenSans-Regular.ttf")));
+		} catch (IOException|FontFormatException e) {
+		     //Handle exception
+		}
 
 		lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon(
@@ -1149,256 +1160,14 @@ public timeTableLogic TableLogic;
 		panel.add(textField_103);
 		contentPane.setLayout(gl_contentPane);
 	
-		try {
-		     GraphicsEnvironment ge = 
-		         GraphicsEnvironment.getLocalGraphicsEnvironment();
-		     ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("OpenSans-Regular.ttf")));
-		} catch (IOException|FontFormatException e) {
-		     //Handle exception
-		}
+	
 		
 		
-//		new Limhamn().start();;
-//		new Segevang().start();;
-//		new Bernstorp().start();;
-//		new Bunkeflostrand().start();;
-//		new Fullriggaren().start();;
-//		new Lindangen().start();;
-//		new Ostrahamnen().start();;
-//		new Kaglinge().start();;
-//		new Falsterbo().start();;
-//		new Trelleborg().start();;
+
 		new getTables().start();;
 	
 	}
 
-//	
-//	public class Limhamn extends Thread {
-//		@Override
-//		public void run() {
-//			while(true){
-//			try {
-//				//Limhamn = null;
-//				Thread.sleep(sleepTime);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//				return;
-//			}
-//			Limhamn = new timeTableLogic(4, "80000", "80310", textField_20, textField_21, textField_22, textField_23, textField_24);
-//			
-//			
-//
-//		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
-//		
-//		}
-//		}
-//	}
-//
-//	public class Segevang extends Thread {
-//		@Override
-//		public void run() {
-//			while(true){
-//			try {
-//				//Segevang = null;
-//				Thread.sleep(sleepTime);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//				return;
-//			}
-//			Segevang = new timeTableLogic(4, "80000", "80200", textField_4, textField_2, textField_5,textField_6, textField_7 );
-//			
-//			
-//
-//		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
-//		
-//		}
-//		}
-//
-//	}
-//	
-//	public class Bernstorp extends Thread {
-//		@Override
-//		public void run() {
-//			while(true){
-//			try {
-//				//Bernstorp = null;
-//				Thread.sleep(sleepTime);
-//				
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//				return;
-//			}
-//			
-//			Bernstorp = new timeTableLogic(4, "80000", "31033", textField_8, textField_9, textField_10, textField_11, textField_12);	
-//			
-//
-//		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
-//		
-//		}
-//		}
-//	}
-//
-//	
-//	public class Bunkeflostrand extends Thread {
-//		@Override
-//		public void run() {
-//			while(true){
-//			try {
-//				//Bunkeflostrand = null;
-//				Thread.sleep(sleepTime);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//				return;
-//			}
-//			
-//			Bunkeflostrand = new timeTableLogic(4, "80000", "80049", textField_14, textField_15, textField_16, textField_17, textField_18);
-//			
-//			
-//
-//		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
-//		
-//		}
-//	}
-//	}
-//	public class Fullriggaren extends Thread {
-//		@Override
-//		public void run() {
-//			while(true){
-//			try {
-//				//Fullriggaren  = null;
-//				Thread.sleep(sleepTime);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//				return;
-//			}
-//			
-//			Fullriggaren = new timeTableLogic(2, "80000", "80080", textField_26, textField_27, textField_28, textField_29, textField_30);
-//			
-//			
-//
-//		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
-//		
-//		}
-//		}
-//	}
-//	
-//	public class Lindangen extends Thread {
-//		@Override
-//		public void run() {
-//			while(true){
-//			try {
-//				//Lindangen  = null;
-//				Thread.sleep(sleepTime);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//				return;
-//			}
-//			
-//			Lindangen = new timeTableLogic(2, "80000", "80600", textField_32, textField_33, textField_34, textField_35, textField_36);
-//			
-//			
-//
-//		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
-//		
-//		}
-//		}
-//	}
-//	public class Ostrahamnen extends Thread {
-//		@Override
-//		public void run() {
-//			while(true){
-//			try {
-//				//OstraHamnen  = null;
-//				Thread.sleep(sleepTime);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//				return;
-//			}
-//			
-//			OstraHamnen = new timeTableLogic(32, "80000", "80020", textField_38, textField_39, textField_40, textField_41, textField_42);
-//			
-//			
-//
-//		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
-//		
-//		}
-//		}
-//	}
-//	public class Kaglinge extends Thread {
-//		@Override
-//		public void run() {
-//			while(true){
-//			try {
-//				//Kaglinge  = null;
-//				Thread.sleep(sleepTime);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//				return;
-//			}
-//			
-//			Kaglinge = new timeTableLogic(32, "80000", "80740", textField_44, textField_45, textField_46, textField_47, textField_48);
-//			
-//			
-//
-//		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
-//		
-//		}
-//		}
-//	}
-//	
-//	public class Falsterbo extends Thread {
-//		@Override
-//		public void run() {
-//			while(true){
-//			try {
-//				//Falsterbo  = null;
-//				Thread.sleep(sleepTime);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//				return;
-//			}
-//			
-//			Falsterbo = new timeTableLogic(100, "80000", "33029", textField_50, textField_51, textField_52, textField_53, textField_54);
-//			
-//			
-//
-//		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
-//		
-//		}
-//		}
-//	}
-//	public class Trelleborg extends Thread {
-//		@Override
-//		public void run() {
-//			while(true){
-//			try {
-//				//Trelleborg  = null;
-//				Thread.sleep(sleepTime);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//				return;
-//
-//			}
-//			
-//			Trelleborg = new timeTableLogic(146, "80000", "87071", textField_58, textField_56, textField_59, textField_60, textField_61);
-//			
-//			
-//
-//		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
-//		
-//		}
-//		}
-//	}
 	public class getTables extends Thread {
 		@Override
 		public void run() {
@@ -1411,6 +1180,7 @@ public timeTableLogic TableLogic;
 				e.printStackTrace();
 				return;
 			}
+			//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
 			Bernstorp = new timeTableLogic(4, "80000", "31033", textField_8, textField_9, textField_10, textField_11, textField_12);	
 			Bunkeflostrand = new timeTableLogic(4, "80000", "80049", textField_14, textField_15, textField_16, textField_17, textField_18);
 			Fullriggaren = new timeTableLogic(2, "80000", "80080", textField_26, textField_27, textField_28, textField_29, textField_30);
@@ -1421,6 +1191,30 @@ public timeTableLogic TableLogic;
 			Lindangen = new timeTableLogic(2, "80000", "80600", textField_32, textField_33, textField_34, textField_35, textField_36);
 			Segevang = new timeTableLogic(4, "80000", "80200", textField_4, textField_2, textField_5,textField_6, textField_7 );
 			Kaglinge = new timeTableLogic(32, "80000", "80740", textField_44, textField_45, textField_46, textField_47, textField_48);
+			Genarp = new timeTableLogic(172, "80000", "81197", textField_62, textField_63, textField_64, textField_65, textField_66);
+			Lomma = new timeTableLogic(133, "80000", "62006", textField_68, textField_69, textField_70, textField_71, textField_72 );
+			S_vång = new timeTableLogic(151, "80000", "33031", textField_76, textField_74, textField_77, textField_78, textField_79 );
+			Kristianstad = new timeTableLogic(1, "80000", "90042", textField_80, textField_81, textField_82, textField_83, textField_84 );
+			Svedala = new timeTableLogic(141, "80000", "63042", textField_86, textField_87, textField_88, textField_89, textField_90);
+		
+		
+		}
+		}
+	}
+	public class getTables2 extends Thread {
+		@Override
+		public void run() {
+			while(true){
+			try {
+				
+				Thread.sleep(sleepTime);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return;
+			}
+			
+
 		//timeTableLogic(int lineNr, String from, String to, JTextField line, JTextField endStation, JTextField timetodep, JTextField timetodep2, JTextField timetodep3)
 		
 		}

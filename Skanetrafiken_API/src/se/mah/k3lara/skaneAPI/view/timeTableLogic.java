@@ -52,9 +52,7 @@ public class timeTableLogic {
 				if (Integer.parseInt(journey.getLineOnFirstJourney()) == lineNr) {
 					line.setText(journey.getLineOnFirstJourney());
 					endStation.setText(journey.getEndStation().toString());
-					//timetodep.setText(journey.getTimeToDeparture()+ " min");
-					//timetodep2.setText(journey.getTimeToDeparture()+ " min");
-					//timetodep3.setText(journey.getTimeToDeparture() + " min");
+				
 					timetodep.setText(journeys.getJourneys().get(0).getTimeToDeparture()+ " min");
 					timetodep2.setText(journeys.getJourneys().get(1).getTimeToDeparture()+ " min");
 					timetodep3.setText(journeys.getJourneys().get(2).getTimeToDeparture()+ " min");
