@@ -36,8 +36,8 @@ public class timeTableLogic {
 		this.timetodep3 = timetodep3;
 		this.line = line;
 		this.endStation = endStation;
-		
-		
+
+
 		
 		String searchURL = Constants.getURL(from, to, 10);
 		
@@ -52,11 +52,12 @@ public class timeTableLogic {
 				if (Integer.parseInt(journey.getLineOnFirstJourney()) == lineNr) {
 					line.setText(journey.getLineOnFirstJourney());
 					endStation.setText(journey.getEndStation().toString());
-				
+
 					timetodep.setText(journeys.getJourneys().get(0).getTimeToDeparture()+ " min");
 					timetodep2.setText(journeys.getJourneys().get(1).getTimeToDeparture()+ " min");
 					timetodep3.setText(journeys.getJourneys().get(2).getTimeToDeparture()+ " min");
 					
+
 				}
 				
 				
@@ -70,10 +71,6 @@ public class timeTableLogic {
 		
 	}
 		
-		
-
-	
-	
 
 
 }
