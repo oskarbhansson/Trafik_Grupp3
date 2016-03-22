@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import klockan.ClockLogic;
 import se.mah.k3lara.skaneAPI.control.Constants;
 import se.mah.k3lara.skaneAPI.model.Journey;
 import se.mah.k3lara.skaneAPI.model.Journeys;
@@ -67,7 +68,7 @@ public class SkanetrafikenGUI extends JFrame {
 	public JTextField txtNstaAvgng;
 	public JTextField txtHpl;
 	public JTextField textField_2;
-	public JTextField textField_3;
+	public JTextField txtA;
 	public JTextField textField_4;
 	public JTextField textField_5;
 	public JTextField textField_6;
@@ -79,58 +80,59 @@ public class SkanetrafikenGUI extends JFrame {
 	public JTextField textField_10;
 	public JTextField textField_11;
 	public JTextField textField_12;
-	public JTextField textField_13;
+	public JTextField txtC;
 	public JLabel label_1;
 	public JTextField textField_14;
 	public JTextField textField_15;
 	public JTextField textField_16;
 	public JTextField textField_17;
 	public JTextField textField_18;
-	public JTextField textField_19;
+	public JTextField txtE;
 	public JLabel label_2;
 	public JTextField textField_20;
 	public JTextField textField_21;
 	public JTextField textField_22;
 	public JTextField textField_23;
 	public JTextField textField_24;
-	public JTextField textField_25;
+	public JTextField txtE_1;
 	public JLabel label_3;
 	public JTextField textField_26;
 	public JTextField textField_27;
 	public JTextField textField_28;
 	public JTextField textField_29;
 	public JTextField textField_30;
-	public JTextField textField_31;
+	public JTextField txtD;
 	public JLabel label_4;
 	public JTextField textField_32;
 	public JTextField textField_33;
 	public JTextField textField_34;
 	public JTextField textField_35;
 	public JTextField textField_36;
-	public JTextField textField_37;
+	public JTextField txtC_1;
 	public JLabel label_5;
 	public JTextField textField_38;
 	public JTextField textField_39;
 	public JTextField textField_40;
 	public JTextField textField_41;
 	public JTextField textField_42;
-	public JTextField textField_43;
+	public JTextField txtE_2;
 	public JLabel label_6;
+	
 	public JTextField textField_44;
 	public JTextField textField_45;
 	public JTextField textField_46;
 	public JTextField textField_47;
 	public JTextField textField_48;
-	public JTextField textField_49;
+	public JTextField txtC_2;
 	public JLabel label_7;
 	public JTextField textField_50;
 	public JTextField textField_51;
 	public JTextField textField_52;
 	public JTextField textField_53;
 	public JTextField textField_54;
-	public JTextField textField_55;
+	public JTextField txtI;
 	public JTextField textField_56;
-	public JTextField textField_57;
+	public JTextField txtI_1;
 	public JTextField textField_58;
 	public JTextField textField_59;
 	public JTextField textField_60;
@@ -142,16 +144,16 @@ public class SkanetrafikenGUI extends JFrame {
 	public JTextField textField_64;
 	public JTextField textField_65;
 	public JTextField textField_66;
-	public JTextField textField_67;
+	public JTextField txtI_2;
 	public JLabel label_10;
 	public JTextField textField_68;
 	public JTextField textField_69;
 	public JTextField textField_70;
 	public JTextField textField_71;
 	public JTextField textField_72;
-	public JTextField textField_73;
+	public JTextField txtG;
 	public JTextField textField_74;
-	public JTextField textField_75;
+	public JTextField txtI_3;
 	public JTextField textField_76;
 	public JTextField textField_77;
 	public JTextField textField_78;
@@ -170,7 +172,7 @@ public class SkanetrafikenGUI extends JFrame {
 	public JTextField textField_88;
 	public JTextField textField_89;
 	public JTextField textField_90;
-	public JTextField textField_91;
+	public JTextField txtH;
 	public JLabel label_14;
 	public JTextField textField_92;
 	public JTextField textField_93;
@@ -203,8 +205,10 @@ public class SkanetrafikenGUI extends JFrame {
 	public timeTableLogic Genarp;
 	public timeTableLogic Långdalen;
 	public timeTableLogic S_vång;
-	public int sleepTime = 900;
+	public int sleepTime = 30000;
+	public JLabel klockLabel;
 public timeTableLogic TableLogic;
+public ClockLogic clockLogic;
 
 
 
@@ -279,6 +283,12 @@ public timeTableLogic TableLogic;
 		lblNewLabel_1.setBounds(0, 0, 631, 890);
 		panel_1.add(lblNewLabel_1);
 		panel.setLayout(null);
+		
+		klockLabel = new JLabel("");
+		klockLabel.setForeground(Color.WHITE);
+		klockLabel.setBounds(819, 0, 124, 42);
+		klockLabel.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		panel.add(klockLabel);
 
 		txtAv = new JTextField();
 		txtAv.setForeground(Color.WHITE);
@@ -334,12 +344,13 @@ public timeTableLogic TableLogic;
 		textField_2.setBounds(184, 98, 309, 42);
 		panel.add(textField_2);
 
-		textField_3 = new JTextField();
-		textField_3.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		textField_3.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
-		textField_3.setColumns(10);
-		textField_3.setBounds(819, 98, 124, 42);
-		panel.add(textField_3);
+		txtA = new JTextField();
+		txtA.setText("C");
+		txtA.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtA.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtA.setColumns(10);
+		txtA.setBounds(819, 98, 124, 42);
+		panel.add(txtA);
 
 		textField_4 = new JTextField();
 		textField_4.setBorder(javax.swing.BorderFactory.createEmptyBorder());
@@ -417,13 +428,14 @@ public timeTableLogic TableLogic;
 		textField_12.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		panel.add(textField_12);
 
-		textField_13 = new JTextField();
-		textField_13.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		textField_13.setBackground(grey);
-		textField_13.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
-		textField_13.setColumns(10);
-		textField_13.setBounds(819, 153, 124, 42);
-		panel.add(textField_13);
+		txtC = new JTextField();
+		txtC.setText("C");
+		txtC.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtC.setBackground(grey);
+		txtC.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtC.setColumns(10);
+		txtC.setBounds(819, 153, 124, 42);
+		panel.add(txtC);
 
 		label_1 = new JLabel("New label");
 		label_1.setBounds(22, 208, 42, 42);
@@ -464,12 +476,13 @@ public timeTableLogic TableLogic;
 		textField_18.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		panel.add(textField_18);
 
-		textField_19 = new JTextField();
-		textField_19.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		textField_19.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
-		textField_19.setColumns(10);
-		textField_19.setBounds(819, 208, 124, 42);
-		panel.add(textField_19);
+		txtE = new JTextField();
+		txtE.setText("E");
+		txtE.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtE.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtE.setColumns(10);
+		txtE.setBounds(819, 208, 124, 42);
+		panel.add(txtE);
 
 		label_2 = new JLabel("New label");
 		label_2.setBounds(22, 263, 42, 42);
@@ -515,13 +528,14 @@ public timeTableLogic TableLogic;
 		textField_24.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		panel.add(textField_24);
 
-		textField_25 = new JTextField();
-		textField_25.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		textField_25.setBackground(grey);
-		textField_25.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
-		textField_25.setColumns(10);
-		textField_25.setBounds(819, 263, 124, 42);
-		panel.add(textField_25);
+		txtE_1 = new JTextField();
+		txtE_1.setText("E");
+		txtE_1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtE_1.setBackground(grey);
+		txtE_1.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtE_1.setColumns(10);
+		txtE_1.setBounds(819, 263, 124, 42);
+		panel.add(txtE_1);
 
 		label_3 = new JLabel("New label");
 		label_3.setBounds(22, 318, 42, 42);
@@ -562,12 +576,13 @@ public timeTableLogic TableLogic;
 		textField_30.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		panel.add(textField_30);
 
-		textField_31 = new JTextField();
-		textField_31.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		textField_31.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
-		textField_31.setColumns(10);
-		textField_31.setBounds(819, 318, 124, 42);
-		panel.add(textField_31);
+		txtD = new JTextField();
+		txtD.setText("D");
+		txtD.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtD.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtD.setColumns(10);
+		txtD.setBounds(819, 318, 124, 42);
+		panel.add(txtD);
 
 		label_4 = new JLabel("New label");
 		label_4.setBounds(22, 373, 42, 42);
@@ -613,13 +628,14 @@ public timeTableLogic TableLogic;
 		textField_36.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		panel.add(textField_36);
 
-		textField_37 = new JTextField();
-		textField_37.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		textField_37.setBackground(grey);
-		textField_37.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
-		textField_37.setColumns(10);
-		textField_37.setBounds(819, 373, 124, 42);
-		panel.add(textField_37);
+		txtC_1 = new JTextField();
+		txtC_1.setText("C");
+		txtC_1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtC_1.setBackground(grey);
+		txtC_1.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtC_1.setColumns(10);
+		txtC_1.setBounds(819, 373, 124, 42);
+		panel.add(txtC_1);
 
 		label_5 = new JLabel("New label");
 		label_5.setBounds(22, 425, 42, 42);
@@ -657,14 +673,16 @@ public timeTableLogic TableLogic;
 		textField_42.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_42.setColumns(10);
 		textField_42.setBounds(706, 425, 103, 42);
+		textField_42.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		panel.add(textField_42);
 
-		textField_43 = new JTextField();
-		textField_43.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		textField_43.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
-		textField_43.setColumns(10);
-		textField_43.setBounds(819, 425, 124, 42);
-		panel.add(textField_43);
+		txtE_2 = new JTextField();
+		txtE_2.setText("E");
+		txtE_2.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtE_2.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtE_2.setColumns(10);
+		txtE_2.setBounds(819, 425, 124, 42);
+		panel.add(txtE_2);
 
 		label_6 = new JLabel("New label");
 		label_6.setBounds(22, 479, 42, 42);
@@ -710,13 +728,14 @@ public timeTableLogic TableLogic;
 		textField_48.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		panel.add(textField_48);
 
-		textField_49 = new JTextField();
-		textField_49.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		textField_49.setBackground(grey);
-		textField_49.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
-		textField_49.setColumns(10);
-		textField_49.setBounds(819, 479, 124, 42);
-		panel.add(textField_49);
+		txtC_2 = new JTextField();
+		txtC_2.setText("C");
+		txtC_2.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtC_2.setBackground(grey);
+		txtC_2.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtC_2.setColumns(10);
+		txtC_2.setBounds(819, 479, 124, 42);
+		panel.add(txtC_2);
 
 		label_7 = new JLabel("New label");
 		label_7.setBounds(22, 534, 42, 42);
@@ -757,12 +776,13 @@ public timeTableLogic TableLogic;
 		textField_54.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		panel.add(textField_54);
 
-		textField_55 = new JTextField();
-		textField_55.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		textField_55.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
-		textField_55.setColumns(10);
-		textField_55.setBounds(819, 534, 124, 42);
-		panel.add(textField_55);
+		txtI = new JTextField();
+		txtI.setText("I");
+		txtI.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtI.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtI.setColumns(10);
+		txtI.setBounds(819, 534, 124, 42);
+		panel.add(txtI);
 
 		textField_56 = new JTextField();
 		textField_56.setBorder(javax.swing.BorderFactory.createEmptyBorder());
@@ -772,13 +792,14 @@ public timeTableLogic TableLogic;
 		textField_56.setBounds(184, 589, 309, 42);
 		panel.add(textField_56);
 
-		textField_57 = new JTextField();
-		textField_57.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		textField_57.setBackground(grey);
-		textField_57.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
-		textField_57.setColumns(10);
-		textField_57.setBounds(819, 589, 124, 42);
-		panel.add(textField_57);
+		txtI_1 = new JTextField();
+		txtI_1.setText("I");
+		txtI_1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtI_1.setBackground(grey);
+		txtI_1.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtI_1.setColumns(10);
+		txtI_1.setBounds(819, 589, 124, 42);
+		panel.add(txtI_1);
 
 		textField_58 = new JTextField();
 		textField_58.setBorder(javax.swing.BorderFactory.createEmptyBorder());
@@ -855,12 +876,13 @@ public timeTableLogic TableLogic;
 		textField_66.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		panel.add(textField_66);
 
-		textField_67 = new JTextField();
-		textField_67.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		textField_67.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
-		textField_67.setColumns(10);
-		textField_67.setBounds(819, 644, 124, 42);
-		panel.add(textField_67);
+		txtI_2 = new JTextField();
+		txtI_2.setText("I");
+		txtI_2.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtI_2.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtI_2.setColumns(10);
+		txtI_2.setBounds(819, 644, 124, 42);
+		panel.add(txtI_2);
 
 		label_10 = new JLabel("New label");
 		label_10.setBounds(22, 699, 42, 42);
@@ -906,13 +928,14 @@ public timeTableLogic TableLogic;
 		textField_72.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		panel.add(textField_72);
 
-		textField_73 = new JTextField();
-		textField_73.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		textField_73.setBackground(grey);
-		textField_73.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
-		textField_73.setColumns(10);
-		textField_73.setBounds(819, 699, 124, 42);
-		panel.add(textField_73);
+		txtG = new JTextField();
+		txtG.setText("G");
+		txtG.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtG.setBackground(grey);
+		txtG.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtG.setColumns(10);
+		txtG.setBounds(819, 699, 124, 42);
+		panel.add(txtG);
 
 		textField_74 = new JTextField();
 		textField_74.setBorder(javax.swing.BorderFactory.createEmptyBorder());
@@ -921,12 +944,13 @@ public timeTableLogic TableLogic;
 		textField_74.setBounds(184, 754, 309, 42);
 		panel.add(textField_74);
 
-		textField_75 = new JTextField();
-		textField_75.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		textField_75.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
-		textField_75.setColumns(10);
-		textField_75.setBounds(819, 754, 124, 42);
-		panel.add(textField_75);
+		txtI_3 = new JTextField();
+		txtI_3.setText("I");
+		txtI_3.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtI_3.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtI_3.setColumns(10);
+		txtI_3.setBounds(819, 754, 124, 42);
+		panel.add(txtI_3);
 
 		textField_76 = new JTextField();
 		textField_76.setBorder(javax.swing.BorderFactory.createEmptyBorder());
@@ -1052,13 +1076,14 @@ public timeTableLogic TableLogic;
 		textField_90.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
 		panel.add(textField_90);
 
-		textField_91 = new JTextField();
-		textField_91.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		textField_91.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
-		textField_91.setColumns(10);
-		textField_91.setBounds(819, 864, 124, 42);
+		txtH = new JTextField();
+		txtH.setText("H");
+		txtH.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		txtH.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtH.setColumns(10);
+		txtH.setBounds(819, 864, 124, 42);
 		
-		panel.add(textField_91);
+		panel.add(txtH);
 
 		label_14 = new JLabel("New label");
 		label_14.setBounds(22, 919, 42, 42);
@@ -1165,6 +1190,7 @@ public timeTableLogic TableLogic;
 		
 
 		new getTables().start();;
+		clockLogic = new ClockLogic(this);
 	
 	}
 
@@ -1220,7 +1246,9 @@ public timeTableLogic TableLogic;
 		}
 		}
 	}
-	
+	public void setTimeOnLabel(String time){
+		klockLabel.setText(time);
+	}
 	}
 	
 	

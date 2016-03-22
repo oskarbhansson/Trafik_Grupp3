@@ -4,18 +4,22 @@ import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import se.mah.k3lara.skaneAPI.view.SkanetrafikenGUI;
+
 public class ClockLogic {
 	
 	private int alarmHour;
 	private int alarmMinute;
-	private DigitalClockGUI clockGui;
+	private SkanetrafikenGUI clockGui;
 	private ClockLogic clockThread;
+	private SkanetrafikenGUI trafikGUI;
 	
 	
 	
 	
-	public ClockLogic(DigitalClockGUI clockGui){
-		this.clockGui = clockGui;
+	
+	public ClockLogic(SkanetrafikenGUI skanetrafikenGUI){
+		this.clockGui = skanetrafikenGUI;
 
 		new ClockThread().start();; 
 	}
