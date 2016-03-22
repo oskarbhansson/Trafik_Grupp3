@@ -205,7 +205,7 @@ public class SkanetrafikenGUI extends JFrame {
 	public timeTableLogic Genarp;
 	public timeTableLogic Långdalen;
 	public timeTableLogic S_vång;
-	public int sleepTime = 30000;
+	public int sleepTime = 2000;
 	public JLabel klockLabel;
 public timeTableLogic TableLogic;
 public ClockLogic clockLogic;
@@ -280,7 +280,7 @@ public ClockLogic clockLogic;
 		lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon(
 		SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/Grafiko-profilo (2).png")));
-		lblNewLabel_1.setBounds(0, 0, 631, 890);
+		lblNewLabel_1.setBounds(0, 0, 955, 1069);
 		panel_1.add(lblNewLabel_1);
 		panel.setLayout(null);
 		
@@ -294,6 +294,7 @@ public ClockLogic clockLogic;
 		txtAv.setForeground(Color.WHITE);
 		txtAv.setEditable(false);
 		txtAv.setFont(new Font("OpenSans-Regular", Font.PLAIN, 40));
+		txtAv.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtAv.setText("Avg\u00E5ngar fr\u00E5n Malm\u00F6 central");
 		txtAv.setBackground(red);
 		txtAv.setBounds(12, 0, 931, 42);
@@ -304,6 +305,7 @@ public ClockLogic clockLogic;
 		txtLinje.setForeground(Color.WHITE);
 		txtLinje.setBackground(red);
 		txtLinje.setFont(new Font("OpenSans-Regular", Font.PLAIN, 40));
+		txtLinje.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtLinje.setText("Linje");
 		txtLinje.setBounds(12, 47, 160, 42);
 		panel.add(txtLinje);
@@ -313,6 +315,7 @@ public ClockLogic clockLogic;
 		txtMot.setForeground(Color.WHITE);
 		txtMot.setBackground(red);
 		txtMot.setFont(new Font("OpenSans-Regular", Font.PLAIN, 40));
+		txtMot.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtMot.setText("Mot");
 		txtMot.setColumns(10);
 		txtMot.setBounds(184, 47, 309, 42);
@@ -323,6 +326,7 @@ public ClockLogic clockLogic;
 		txtNstaAvgng.setBackground(red);
 		txtNstaAvgng.setText("N\u00E4sta avg\u00E5ng");
 		txtNstaAvgng.setFont(new Font("OpenSans-Regular", Font.PLAIN, 40));
+		txtNstaAvgng.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtNstaAvgng.setColumns(10);
 		txtNstaAvgng.setBounds(500, 47, 309, 42);
 		panel.add(txtNstaAvgng);
@@ -332,6 +336,7 @@ public ClockLogic clockLogic;
 		txtHpl.setBackground(red);
 		txtHpl.setText("Hpl");
 		txtHpl.setFont(new Font("OpenSans-Regular", Font.PLAIN, 40));
+		txtHpl.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtHpl.setColumns(10);
 		txtHpl.setBounds(819, 47, 124, 42);
 		panel.add(txtHpl);
@@ -347,7 +352,7 @@ public ClockLogic clockLogic;
 		txtA = new JTextField();
 		txtA.setText("C");
 		txtA.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		txtA.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtA.setFont(new Font("OpenSans-Regular", Font.BOLD, 30));
 		txtA.setColumns(10);
 		txtA.setBounds(819, 98, 124, 42);
 		panel.add(txtA);
@@ -355,14 +360,14 @@ public ClockLogic clockLogic;
 		textField_4 = new JTextField();
 		textField_4.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_4.setBounds(92, 98, 80, 42);
-		textField_4.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_4.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_4);
 		textField_4.setColumns(10);
 
 		textField_5 = new JTextField();
 		textField_5.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_5.setColumns(10);
-		textField_5.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_5.setFont(new Font("Dialog", Font.BOLD, 30));
 		textField_5.setBounds(500, 98, 103, 42);
 		panel.add(textField_5);
 
@@ -370,21 +375,23 @@ public ClockLogic clockLogic;
 		textField_6.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_6.setColumns(10);
 		textField_6.setBounds(603, 98, 103, 42);
-		textField_6.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_6.setFont(new Font("Dialog", Font.ITALIC, 26));
 		panel.add(textField_6);
 
 		textField_7 = new JTextField();
 		textField_7.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_7.setColumns(10);
 		textField_7.setBounds(706, 98, 103, 42);
-		textField_7.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_7.setFont(new Font("Dialog", Font.ITALIC, 22));
 		panel.add(textField_7);
 
 		lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/Buss.PNG")));
 		lblNewLabel.setBounds(22, 98, 42, 42);
 		panel.add(lblNewLabel);
 
 		label = new JLabel("New label");
+		label.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/Buss.PNG")));
 		label.setBounds(22, 153, 42, 42);
 		panel.add(label);
 
@@ -393,7 +400,7 @@ public ClockLogic clockLogic;
 		textField_8.setBackground(grey);
 		textField_8.setColumns(10);
 		textField_8.setBounds(92, 153, 80, 42);
-		textField_8.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_8.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_8);
 
 		textField_9 = new JTextField();
@@ -409,7 +416,7 @@ public ClockLogic clockLogic;
 		textField_10.setBackground(grey);
 		textField_10.setColumns(10);
 		textField_10.setBounds(500, 153, 103, 42);
-		textField_10.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_10.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_10);
 
 		textField_11 = new JTextField();
@@ -417,7 +424,7 @@ public ClockLogic clockLogic;
 		textField_11.setBackground(grey);
 		textField_11.setColumns(10);
 		textField_11.setBounds(603, 153, 103, 42);
-		textField_11.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_11.setFont(new Font("Dialog", Font.ITALIC, 26));
 		panel.add(textField_11);
 
 		textField_12 = new JTextField();
@@ -425,19 +432,20 @@ public ClockLogic clockLogic;
 		textField_12.setBackground(grey);
 		textField_12.setColumns(10);
 		textField_12.setBounds(706, 153, 103, 42);
-		textField_12.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_12.setFont(new Font("Dialog", Font.ITALIC, 22));
 		panel.add(textField_12);
 
 		txtC = new JTextField();
 		txtC.setText("C");
 		txtC.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtC.setBackground(grey);
-		txtC.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtC.setFont(new Font("OpenSans-Regular", Font.BOLD, 30));
 		txtC.setColumns(10);
 		txtC.setBounds(819, 153, 124, 42);
 		panel.add(txtC);
 
 		label_1 = new JLabel("New label");
+		label_1.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/Buss.PNG")));
 		label_1.setBounds(22, 208, 42, 42);
 		panel.add(label_1);
 
@@ -445,7 +453,7 @@ public ClockLogic clockLogic;
 		textField_14.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_14.setColumns(10);
 		textField_14.setBounds(92, 208, 80, 42);
-		textField_14.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_14.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_14);
 
 		textField_15 = new JTextField();
@@ -459,32 +467,33 @@ public ClockLogic clockLogic;
 		textField_16.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_16.setColumns(10);
 		textField_16.setBounds(500, 208, 103, 42);
-		textField_16.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_16.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_16);
 
 		textField_17 = new JTextField();
 		textField_17.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_17.setColumns(10);
 		textField_17.setBounds(603, 208, 103, 42);
-		textField_17.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_17.setFont(new Font("Dialog", Font.ITALIC, 26));
 		panel.add(textField_17);
 
 		textField_18 = new JTextField();
 		textField_18.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_18.setColumns(10);
 		textField_18.setBounds(706, 208, 103, 42);
-		textField_18.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_18.setFont(new Font("Dialog", Font.ITALIC, 22));
 		panel.add(textField_18);
 
 		txtE = new JTextField();
 		txtE.setText("E");
 		txtE.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		txtE.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtE.setFont(new Font("OpenSans-Regular", Font.BOLD, 30));
 		txtE.setColumns(10);
 		txtE.setBounds(819, 208, 124, 42);
 		panel.add(txtE);
 
 		label_2 = new JLabel("New label");
+		label_2.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/Buss.PNG")));
 		label_2.setBounds(22, 263, 42, 42);
 		panel.add(label_2);
 
@@ -493,7 +502,7 @@ public ClockLogic clockLogic;
 		textField_20.setBackground(grey);
 		textField_20.setColumns(10);
 		textField_20.setBounds(92, 263, 80, 42);
-		textField_20.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_20.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_20);
 
 		textField_21 = new JTextField();
@@ -509,7 +518,7 @@ public ClockLogic clockLogic;
 		textField_22.setBackground(grey);
 		textField_22.setColumns(10);
 		textField_22.setBounds(500, 263, 103, 42);
-		textField_22.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_22.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_22);
 
 		textField_23 = new JTextField();
@@ -517,7 +526,7 @@ public ClockLogic clockLogic;
 		textField_23.setBackground(grey);
 		textField_23.setColumns(10);
 		textField_23.setBounds(603, 263, 103, 42);
-		textField_23.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_23.setFont(new Font("Dialog", Font.ITALIC, 26));
 		panel.add(textField_23);
 
 		textField_24 = new JTextField();
@@ -525,19 +534,20 @@ public ClockLogic clockLogic;
 		textField_24.setBackground(grey);
 		textField_24.setColumns(10);
 		textField_24.setBounds(706, 263, 103, 42);
-		textField_24.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_24.setFont(new Font("Dialog", Font.ITALIC, 22));
 		panel.add(textField_24);
 
 		txtE_1 = new JTextField();
 		txtE_1.setText("E");
 		txtE_1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtE_1.setBackground(grey);
-		txtE_1.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtE_1.setFont(new Font("OpenSans-Regular", Font.BOLD, 30));
 		txtE_1.setColumns(10);
 		txtE_1.setBounds(819, 263, 124, 42);
 		panel.add(txtE_1);
 
 		label_3 = new JLabel("New label");
+		label_3.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/Buss.PNG")));
 		label_3.setBounds(22, 318, 42, 42);
 		panel.add(label_3);
 
@@ -545,7 +555,7 @@ public ClockLogic clockLogic;
 		textField_26.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_26.setColumns(10);
 		textField_26.setBounds(92, 318, 80, 42);
-		textField_26.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_26.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_26);
 
 		textField_27 = new JTextField();
@@ -559,32 +569,33 @@ public ClockLogic clockLogic;
 		textField_28.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_28.setColumns(10);
 		textField_28.setBounds(500, 318, 103, 42);
-		textField_28.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_28.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_28);
 
 		textField_29 = new JTextField();
 		textField_29.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_29.setColumns(10);
 		textField_29.setBounds(603, 318, 103, 42);
-		textField_29.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_29.setFont(new Font("Dialog", Font.ITALIC, 26));
 		panel.add(textField_29);
 
 		textField_30 = new JTextField();
 		textField_30.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_30.setColumns(10);
 		textField_30.setBounds(706, 318, 103, 42);
-		textField_30.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_30.setFont(new Font("Dialog", Font.ITALIC, 22));
 		panel.add(textField_30);
 
 		txtD = new JTextField();
 		txtD.setText("D");
 		txtD.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		txtD.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtD.setFont(new Font("OpenSans-Regular", Font.BOLD, 30));
 		txtD.setColumns(10);
 		txtD.setBounds(819, 318, 124, 42);
 		panel.add(txtD);
 
 		label_4 = new JLabel("New label");
+		label_4.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/Buss.PNG")));
 		label_4.setBounds(22, 373, 42, 42);
 		panel.add(label_4);
 
@@ -593,7 +604,7 @@ public ClockLogic clockLogic;
 		textField_32.setBackground(grey);
 		textField_32.setColumns(10);
 		textField_32.setBounds(92, 373, 80, 42);
-		textField_32.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_32.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_32);
 
 		textField_33 = new JTextField();
@@ -609,7 +620,7 @@ public ClockLogic clockLogic;
 		textField_34.setBackground(grey);
 		textField_34.setColumns(10);
 		textField_34.setBounds(500, 373, 103, 42);
-		textField_34.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_34.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_34);
 
 		textField_35 = new JTextField();
@@ -617,7 +628,7 @@ public ClockLogic clockLogic;
 		textField_35.setBackground(grey);
 		textField_35.setColumns(10);
 		textField_35.setBounds(603, 373, 103, 42);
-		textField_35.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_35.setFont(new Font("Dialog", Font.ITALIC, 26));
 		panel.add(textField_35);
 
 		textField_36 = new JTextField();
@@ -625,19 +636,20 @@ public ClockLogic clockLogic;
 		textField_36.setBackground(grey);
 		textField_36.setColumns(10);
 		textField_36.setBounds(706, 373, 103, 42);
-		textField_36.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_36.setFont(new Font("Dialog", Font.ITALIC, 22));
 		panel.add(textField_36);
 
 		txtC_1 = new JTextField();
 		txtC_1.setText("C");
 		txtC_1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtC_1.setBackground(grey);
-		txtC_1.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtC_1.setFont(new Font("OpenSans-Regular", Font.BOLD, 30));
 		txtC_1.setColumns(10);
 		txtC_1.setBounds(819, 373, 124, 42);
 		panel.add(txtC_1);
 
 		label_5 = new JLabel("New label");
+		label_5.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/Buss.PNG")));
 		label_5.setBounds(22, 425, 42, 42);
 		panel.add(label_5);
 
@@ -645,7 +657,7 @@ public ClockLogic clockLogic;
 		textField_38.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_38.setColumns(10);
 		textField_38.setBounds(92, 425, 80, 42);
-		textField_38.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_38.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_38);
 
 		textField_39 = new JTextField();
@@ -659,32 +671,33 @@ public ClockLogic clockLogic;
 		textField_40.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_40.setColumns(10);
 		textField_40.setBounds(500, 425, 103, 42);
-		textField_40.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_40.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_40);
 
 		textField_41 = new JTextField();
 		textField_41.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_41.setColumns(10);
 		textField_41.setBounds(603, 425, 103, 42);
-		textField_41.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_41.setFont(new Font("Dialog", Font.ITALIC, 26));
 		panel.add(textField_41);
 
 		textField_42 = new JTextField();
 		textField_42.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_42.setColumns(10);
 		textField_42.setBounds(706, 425, 103, 42);
-		textField_42.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_42.setFont(new Font("Dialog", Font.ITALIC, 22));
 		panel.add(textField_42);
 
 		txtE_2 = new JTextField();
 		txtE_2.setText("E");
 		txtE_2.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		txtE_2.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtE_2.setFont(new Font("OpenSans-Regular", Font.BOLD, 30));
 		txtE_2.setColumns(10);
 		txtE_2.setBounds(819, 425, 124, 42);
 		panel.add(txtE_2);
 
 		label_6 = new JLabel("New label");
+		label_6.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/Buss.PNG")));
 		label_6.setBounds(22, 479, 42, 42);
 		panel.add(label_6);
 
@@ -693,7 +706,7 @@ public ClockLogic clockLogic;
 		textField_44.setBackground(grey);
 		textField_44.setColumns(10);
 		textField_44.setBounds(92, 479, 80, 42);
-		textField_44.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_44.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_44);
 
 		textField_45 = new JTextField();
@@ -709,7 +722,7 @@ public ClockLogic clockLogic;
 		textField_46.setBackground(grey);
 		textField_46.setColumns(10);
 		textField_46.setBounds(500, 479, 103, 42);
-		textField_46.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_46.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_46);
 
 		textField_47 = new JTextField();
@@ -717,7 +730,7 @@ public ClockLogic clockLogic;
 		textField_47.setBackground(grey);
 		textField_47.setColumns(10);
 		textField_47.setBounds(603, 479, 103, 42);
-		textField_47.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_47.setFont(new Font("Dialog", Font.ITALIC, 26));
 		panel.add(textField_47);
 
 		textField_48 = new JTextField();
@@ -725,19 +738,20 @@ public ClockLogic clockLogic;
 		textField_48.setBackground(grey);
 		textField_48.setColumns(10);
 		textField_48.setBounds(706, 479, 103, 42);
-		textField_48.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_48.setFont(new Font("Dialog", Font.ITALIC, 22));
 		panel.add(textField_48);
 
 		txtC_2 = new JTextField();
 		txtC_2.setText("C");
 		txtC_2.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtC_2.setBackground(grey);
-		txtC_2.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtC_2.setFont(new Font("OpenSans-Regular", Font.BOLD, 30));
 		txtC_2.setColumns(10);
 		txtC_2.setBounds(819, 479, 124, 42);
 		panel.add(txtC_2);
 
 		label_7 = new JLabel("New label");
+		label_7.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/BussGul.png")));
 		label_7.setBounds(22, 534, 42, 42);
 		panel.add(label_7);
 
@@ -745,7 +759,7 @@ public ClockLogic clockLogic;
 		textField_50.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_50.setColumns(10);
 		textField_50.setBounds(92, 534, 80, 42);
-		textField_50.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_50.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_50);
 
 		textField_51 = new JTextField();
@@ -759,27 +773,27 @@ public ClockLogic clockLogic;
 		textField_52.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_52.setColumns(10);
 		textField_52.setBounds(500, 534, 103, 42);
-		textField_52.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_52.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_52);
 
 		textField_53 = new JTextField();
 		textField_53.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_53.setColumns(10);
 		textField_53.setBounds(603, 534, 103, 42);
-		textField_53.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_53.setFont(new Font("Dialog", Font.ITALIC, 26));
 		panel.add(textField_53);
 
 		textField_54 = new JTextField();
 		textField_54.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_54.setColumns(10);
 		textField_54.setBounds(706, 534, 103, 42);
-		textField_54.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_54.setFont(new Font("Dialog", Font.ITALIC, 22));
 		panel.add(textField_54);
 
 		txtI = new JTextField();
 		txtI.setText("I");
 		txtI.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		txtI.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtI.setFont(new Font("OpenSans-Regular", Font.BOLD, 30));
 		txtI.setColumns(10);
 		txtI.setBounds(819, 534, 124, 42);
 		panel.add(txtI);
@@ -796,7 +810,7 @@ public ClockLogic clockLogic;
 		txtI_1.setText("I");
 		txtI_1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtI_1.setBackground(grey);
-		txtI_1.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtI_1.setFont(new Font("OpenSans-Regular", Font.BOLD, 30));
 		txtI_1.setColumns(10);
 		txtI_1.setBounds(819, 589, 124, 42);
 		panel.add(txtI_1);
@@ -806,7 +820,7 @@ public ClockLogic clockLogic;
 		textField_58.setBackground(grey);
 		textField_58.setColumns(10);
 		textField_58.setBounds(92, 589, 80, 42);
-		textField_58.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_58.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_58);
 
 		textField_59 = new JTextField();
@@ -814,7 +828,7 @@ public ClockLogic clockLogic;
 		textField_59.setBackground(grey);
 		textField_59.setColumns(10);
 		textField_59.setBounds(500, 589, 103, 42);
-		textField_59.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_59.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_59);
 
 		textField_60 = new JTextField();
@@ -822,7 +836,7 @@ public ClockLogic clockLogic;
 		textField_60.setBackground(grey);
 		textField_60.setColumns(10);
 		textField_60.setBounds(603, 589, 103, 42);
-		textField_60.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_60.setFont(new Font("Dialog", Font.ITALIC, 26));
 		panel.add(textField_60);
 
 		textField_61 = new JTextField();
@@ -830,14 +844,16 @@ public ClockLogic clockLogic;
 		textField_61.setBackground(grey);
 		textField_61.setColumns(10);
 		textField_61.setBounds(706, 589, 103, 42);
-		textField_61.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_61.setFont(new Font("Dialog", Font.ITALIC, 22));
 		panel.add(textField_61);
 
 		label_8 = new JLabel("New label");
+		label_8.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/BussGul.png")));
 		label_8.setBounds(22, 589, 42, 42);
 		panel.add(label_8);
 
 		label_9 = new JLabel("New label");
+		label_9.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/BussGul.png")));
 		label_9.setBounds(22, 644, 42, 42);
 		panel.add(label_9);
 
@@ -845,7 +861,7 @@ public ClockLogic clockLogic;
 		textField_62.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_62.setColumns(10);
 		textField_62.setBounds(92, 644, 80, 42);
-		textField_62.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_62.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_62);
 
 		textField_63 = new JTextField();
@@ -859,32 +875,33 @@ public ClockLogic clockLogic;
 		textField_64.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_64.setColumns(10);
 		textField_64.setBounds(500, 644, 103, 42);
-		textField_64.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_64.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_64);
 
 		textField_65 = new JTextField();
 		textField_65.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_65.setColumns(10);
 		textField_65.setBounds(603, 644, 103, 42);
-		textField_65.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_65.setFont(new Font("Dialog", Font.ITALIC, 26));
 		panel.add(textField_65);
 
 		textField_66 = new JTextField();
 		textField_66.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_66.setColumns(10);
 		textField_66.setBounds(706, 644, 103, 42);
-		textField_66.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_66.setFont(new Font("Dialog", Font.ITALIC, 22));
 		panel.add(textField_66);
 
 		txtI_2 = new JTextField();
 		txtI_2.setText("I");
 		txtI_2.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		txtI_2.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtI_2.setFont(new Font("OpenSans-Regular", Font.BOLD, 30));
 		txtI_2.setColumns(10);
 		txtI_2.setBounds(819, 644, 124, 42);
 		panel.add(txtI_2);
 
 		label_10 = new JLabel("New label");
+		label_10.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/BussGul.png")));
 		label_10.setBounds(22, 699, 42, 42);
 		panel.add(label_10);
 
@@ -893,7 +910,7 @@ public ClockLogic clockLogic;
 		textField_68.setBackground(grey);
 		textField_68.setColumns(10);
 		textField_68.setBounds(92, 699, 80, 42);
-		textField_68.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_68.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_68);
 
 		textField_69 = new JTextField();
@@ -909,7 +926,7 @@ public ClockLogic clockLogic;
 		textField_70.setBackground(grey);
 		textField_70.setColumns(10);
 		textField_70.setBounds(500, 699, 103, 42);
-		textField_70.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_70.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_70);
 
 		textField_71 = new JTextField();
@@ -917,7 +934,7 @@ public ClockLogic clockLogic;
 		textField_71.setBackground(grey);
 		textField_71.setColumns(10);
 		textField_71.setBounds(603, 699, 103, 42);
-		textField_71.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_71.setFont(new Font("Dialog", Font.ITALIC, 26));
 		panel.add(textField_71);
 
 		textField_72 = new JTextField();
@@ -925,14 +942,14 @@ public ClockLogic clockLogic;
 		textField_72.setBackground(grey);
 		textField_72.setColumns(10);
 		textField_72.setBounds(706, 699, 103, 42);
-		textField_72.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_72.setFont(new Font("Dialog", Font.ITALIC, 22));
 		panel.add(textField_72);
 
 		txtG = new JTextField();
 		txtG.setText("G");
 		txtG.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		txtG.setBackground(grey);
-		txtG.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtG.setFont(new Font("OpenSans-Regular", Font.BOLD, 30));
 		txtG.setColumns(10);
 		txtG.setBounds(819, 699, 124, 42);
 		panel.add(txtG);
@@ -947,7 +964,7 @@ public ClockLogic clockLogic;
 		txtI_3 = new JTextField();
 		txtI_3.setText("I");
 		txtI_3.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		txtI_3.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtI_3.setFont(new Font("OpenSans-Regular", Font.BOLD, 30));
 		txtI_3.setColumns(10);
 		txtI_3.setBounds(819, 754, 124, 42);
 		panel.add(txtI_3);
@@ -957,35 +974,37 @@ public ClockLogic clockLogic;
 		textField_76.setBackground(Color.WHITE);
 		textField_76.setColumns(10);
 		textField_76.setBounds(92, 754, 80, 42);
-		textField_76.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_76.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_76);
 
 		textField_77 = new JTextField();
 		textField_77.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_77.setColumns(10);
 		textField_77.setBounds(500, 754, 103, 42);
-		textField_77.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_77.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_77);
 
 		textField_78 = new JTextField();
 		textField_78.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_78.setColumns(10);
 		textField_78.setBounds(603, 754, 103, 42);
-		textField_78.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_78.setFont(new Font("Dialog", Font.ITALIC, 26));
 		panel.add(textField_78);
 
 		textField_79 = new JTextField();
 		textField_79.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_79.setColumns(10);
 		textField_79.setBounds(706, 754, 103, 42);
-		textField_79.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_79.setFont(new Font("Dialog", Font.ITALIC, 22));
 		panel.add(textField_79);
 
 		label_11 = new JLabel("New label");
+		label_11.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/BussGul.png")));
 		label_11.setBounds(22, 754, 42, 42);
 		panel.add(label_11);
 
 		label_12 = new JLabel("New label");
+		label_12.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/javax/swing/plaf/metal/icons/Error.gif")));
 		label_12.setBounds(22, 809, 42, 42);
 		panel.add(label_12);
 
@@ -994,7 +1013,7 @@ public ClockLogic clockLogic;
 		textField_80.setBackground(grey);
 		textField_80.setColumns(10);
 		textField_80.setBounds(92, 809, 80, 42);
-		textField_80.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_80.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_80);
 
 		textField_81 = new JTextField();
@@ -1010,7 +1029,7 @@ public ClockLogic clockLogic;
 		textField_82.setBackground(grey);
 		textField_82.setColumns(10);
 		textField_82.setBounds(500, 809, 103, 42);
-		textField_82.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_82.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_82);
 
 		textField_83 = new JTextField();
@@ -1018,7 +1037,7 @@ public ClockLogic clockLogic;
 		textField_83.setBackground(grey);
 		textField_83.setColumns(10);
 		textField_83.setBounds(603, 809, 103, 42);
-		textField_83.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_83.setFont(new Font("Dialog", Font.ITALIC, 26));
 		panel.add(textField_83);
 
 		textField_84 = new JTextField();
@@ -1026,7 +1045,7 @@ public ClockLogic clockLogic;
 		textField_84.setBackground(grey);
 		textField_84.setColumns(10);
 		textField_84.setBounds(706, 809, 103, 42);
-		textField_84.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_84.setFont(new Font("Dialog", Font.ITALIC, 22));
 		panel.add(textField_84);
 
 		textField_85 = new JTextField();
@@ -1038,6 +1057,7 @@ public ClockLogic clockLogic;
 		panel.add(textField_85);
 
 		label_13 = new JLabel("New label");
+		label_13.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/se/mah/k3lara/skaneAPI/view/BussGul.png")));
 		label_13.setBounds(22, 864, 42, 42);
 		panel.add(label_13);
 
@@ -1045,7 +1065,7 @@ public ClockLogic clockLogic;
 		textField_86.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_86.setColumns(10);
 		textField_86.setBounds(92, 864, 80, 42);
-		textField_86.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_86.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_86);
 
 		textField_87 = new JTextField();
@@ -1059,33 +1079,34 @@ public ClockLogic clockLogic;
 		textField_88.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_88.setColumns(10);
 		textField_88.setBounds(500, 864, 103, 42);
-		textField_88.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_88.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_88);
 
 		textField_89 = new JTextField();
 		textField_89.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_89.setColumns(10);
 		textField_89.setBounds(603, 864, 103, 42);
-		textField_89.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_89.setFont(new Font("Dialog", Font.ITALIC, 26));
 		panel.add(textField_89);
 
 		textField_90 = new JTextField();
 		textField_90.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_90.setColumns(10);
 		textField_90.setBounds(706, 864, 103, 42);
-		textField_90.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_90.setFont(new Font("Dialog", Font.ITALIC, 22));
 		panel.add(textField_90);
 
 		txtH = new JTextField();
 		txtH.setText("H");
 		txtH.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		txtH.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		txtH.setFont(new Font("OpenSans-Regular", Font.BOLD, 30));
 		txtH.setColumns(10);
 		txtH.setBounds(819, 864, 124, 42);
 		
 		panel.add(txtH);
 
 		label_14 = new JLabel("New label");
+		label_14.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/javax/swing/plaf/metal/icons/Error.gif")));
 		label_14.setBounds(22, 919, 42, 42);
 		panel.add(label_14);
 
@@ -1093,7 +1114,7 @@ public ClockLogic clockLogic;
 		textField_92.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_92.setColumns(10);
 		textField_92.setBounds(92, 919, 80, 42);
-		textField_92.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_92.setFont(new Font("Dialog", Font.BOLD, 30));
 		textField_92.setBackground(grey);
 		panel.add(textField_92);
 
@@ -1109,7 +1130,7 @@ public ClockLogic clockLogic;
 		textField_94.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_94.setColumns(10);
 		textField_94.setBounds(500, 919, 103, 42);
-		textField_94.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_94.setFont(new Font("Dialog", Font.BOLD, 30));
 		textField_94.setBackground(grey);
 		panel.add(textField_94);
 
@@ -1117,7 +1138,7 @@ public ClockLogic clockLogic;
 		textField_95.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_95.setColumns(10);
 		textField_95.setBounds(603, 919, 103, 42);
-		textField_95.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_95.setFont(new Font("Dialog", Font.ITALIC, 26));
 		textField_95.setBackground(grey);
 		panel.add(textField_95);
 
@@ -1125,7 +1146,7 @@ public ClockLogic clockLogic;
 		textField_96.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_96.setColumns(10);
 		textField_96.setBounds(706, 919, 103, 42);
-		textField_96.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_96.setFont(new Font("Dialog", Font.ITALIC, 22));
 		textField_96.setBackground(grey);
 		panel.add(textField_96);
 
@@ -1138,6 +1159,7 @@ public ClockLogic clockLogic;
 		panel.add(textField_97);
 
 		label_15 = new JLabel("New label");
+		label_15.setIcon(new ImageIcon(SkanetrafikenGUI.class.getResource("/javax/swing/plaf/metal/icons/Error.gif")));
 		label_15.setBounds(22, 974, 42, 42);
 		panel.add(label_15);
 
@@ -1145,7 +1167,7 @@ public ClockLogic clockLogic;
 		textField_98.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_98.setColumns(10);
 		textField_98.setBounds(92, 974, 80, 42);
-		textField_98.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_98.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_98);
 
 		textField_99 = new JTextField();
@@ -1159,21 +1181,21 @@ public ClockLogic clockLogic;
 		textField_100.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_100.setColumns(10);
 		textField_100.setBounds(500, 974, 103, 42);
-		textField_100.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_100.setFont(new Font("Dialog", Font.BOLD, 30));
 		panel.add(textField_100);
 
 		textField_101 = new JTextField();
 		textField_101.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_101.setColumns(10);
 		textField_101.setBounds(603, 974, 103, 42);
-		textField_101.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_101.setFont(new Font("Dialog", Font.ITALIC, 26));
 		panel.add(textField_101);
 
 		textField_102 = new JTextField();
 		textField_102.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		textField_102.setColumns(10);
 		textField_102.setBounds(706, 974, 103, 42);
-		textField_102.setFont(new Font("OpenSans-Regular", Font.PLAIN, 30));
+		textField_102.setFont(new Font("Dialog", Font.ITALIC, 22));
 		panel.add(textField_102);
 
 		textField_103 = new JTextField();
@@ -1220,7 +1242,7 @@ public ClockLogic clockLogic;
 			Genarp = new timeTableLogic(172, "80000", "81197", textField_62, textField_63, textField_64, textField_65, textField_66);
 			Lomma = new timeTableLogic(133, "80000", "62006", textField_68, textField_69, textField_70, textField_71, textField_72 );
 			S_vång = new timeTableLogic(151, "80000", "33031", textField_76, textField_74, textField_77, textField_78, textField_79 );
-			Kristianstad = new timeTableLogic(1, "80000", "90042", textField_80, textField_81, textField_82, textField_83, textField_84 );
+			Kristianstad = new timeTableLogic(1, "80000", "90170", textField_80, textField_81, textField_82, textField_83, textField_84 );
 			Svedala = new timeTableLogic(141, "80000", "63042", textField_86, textField_87, textField_88, textField_89, textField_90);
 		
 		
